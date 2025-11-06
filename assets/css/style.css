@@ -1,0 +1,322 @@
+/* padding y margin general a 0 */
+* {
+    padding: 0 ;
+    margin: 0;
+}
+
+/* barra de navegacion */
+.navbar {
+    z-index: 1000; /* asegura que la barra de navegación esté por encima de otros elementos */
+    width: 100%;
+    height: 90px; /* altura de la barra en dispositivos moviles */
+    margin: 0 auto; /* centra la barra de navegación horizontal */
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.navbar .fa-bars {
+	display: none;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* mascota en la barra de navegacion */
+.navbar-brand img {
+    width: 100%; /* tamaño de la imagen */
+    height: auto; /* altura automatica */
+    max-width: 75px; /* ancho maximo de la imagenn */
+}
+
+/* contenedor general de la barra */
+.container-fluid {
+    background: #4a5670 ; /* color de fondo */
+    height: 100%; /* altura del contenedor */
+}
+
+/* opciones de la barra de navegacion */
+.container-fluid.justify-content-start{
+    max-width: 20%; /* ancho maximo del contenedor */
+    min-width: 5%; /* ancho minimo del contenedor */
+    margin: 0 auto; /* centra horizontal el contenedor */
+    height: auto; /* altura automática */
+    align-content: center;
+}
+
+/* lista de navegación */
+.navbar-nav {
+    width: 100%;
+}
+
+.navbar-nav.ms-auto {
+    max-width: 65%; /* ancho maximo del contenedor */
+    min-width: 20%; /* ancho minimo del contenedor */
+    margin: 0 auto; /* centra horizontal el contenedor */
+}
+
+/* los elementos de navegación */
+.navbar-nav > .nav-item {
+    flex: 1; /* distribuye uniformemente los elementos */
+    text-align: center; /* centra el texto  en horizontal */
+}
+
+.navbar-collapse {
+    background-color: #4a5670; /* fondo de los enlaces en la barra desplegable para moviles */
+}
+
+/* estilos para los enlaces de navegación */
+.nav-item .nav-link {
+    font-family: Arial, sans-serif; /* fuente */
+    font-size: 100%; /* tamaño del texto */
+    color: #c2c8c5 ;
+}
+
+.nav-item .nav-link:hover {
+    background: #1b243a ; /* color de fondo al pasar el mouse */
+    color: #ffffff ; /* color del texto al pasar el mouse */
+}
+
+/* estilos generales del cuerpo */
+body {
+    background-color: #4a5670 !important; /* color de fondo */
+    display: flex; /* distribuye los elementos en fila */
+    flex-direction: column; /* dirección de la distribución */
+    min-height: 100vh; /* altura minima de la vista */
+    color: #ffffff !important; /* color del texto */
+}
+
+/* estilos para el contenido principal */
+main{
+    height: 50%; /* altura del contenido principal */
+}
+
+/* contenedor para el carrusel */
+.conteiner-car{
+    width: 100%; /* ancho del contenedor */
+    display: flex; /* distribuye los elementos en fila */
+    justify-content: center; /* centra horizontalmente */
+}
+
+/* estilos del carrusel */
+.carousel-inner {
+    max-width: 100%; /* ancho maximo */
+    min-width: 20%; /* ancho minimo */
+    margin: 0 auto; /* centrar horizontal */
+}
+
+.texto{
+    text-align: center; /* centra en horizontal el texto */
+}
+
+.grid {
+    display: flex; /* distribuye los elementos en fila */
+    flex-wrap: wrap; /* permite que los elementos se envuelvan */
+}
+
+.clearfix{
+    padding: 5%; /* relleno */
+    width: 100%; /* ancho del contenedor */
+    display: flex; /* distribuye los elementos en fila */
+    align-content: center; /* alinea en vertical los elementos */
+}
+
+/* bordes */
+.bordered-text {
+    font-size: 20px; /* tamaño de fuente base */
+    line-height: 1.5; /* espaciado entre líneas */
+    max-width: 70%; /* ancho maximo */
+    min-width: 20%; /* ancho minimo */
+    height: auto; /* altura automatica */
+    margin: auto; /* centra automaticamente */
+}
+
+.bordered-image {
+    max-width: 20%; /* ancho maximo de la imagen */
+    min-width: 10%; /* ancho minimo */
+    height: auto; /* altura automatica */
+    display: block; /* la imagen es un bloque */
+    margin: auto; /* centra la imagen horizontalmente */
+}
+
+/* textos secundarios */
+.text-segundos{
+    color: #b7c1d3; /* color del texto */
+}
+
+/* enlace personalizado */
+.custom-link{
+    color: #1b243a !important; /* color del enlace */
+    font-size: 20px; /* tamaño del texto */
+}
+
+/* filas de la pagina principal */
+.row-principal{
+    width: 70%; /* ancho de la fila */
+}
+
+/* filas de la pagina Quienes Somos para las tarjetas del staff */
+.row-staff{
+    width: 90%; /* ancho de la fila */
+}
+
+.row-producto{
+    width: 88%; /* ancho de la fila */
+}
+
+/* filas de la pagina del contacto */
+.row-contacto{
+    align-items: center; /* alinea verticalmente los elementos */
+}
+
+/* enlaces de contacto en las tarjetas */
+.card-text-contacto a{
+    color: #253b41 !important; /* color del enlace */
+}
+
+/* mapa en tarjeta */
+.card-map {
+    position: relative; /* posicion relativa */
+    width: 100%; /* ancho */
+    height: auto; /* altura automatica */
+    padding-bottom: 90%; /* tamaño en 4:3 */
+    border: 35px solid; /* borde */
+}
+
+/* maps sobre la tarjeta */
+.card-map iframe {
+    position: absolute; /* posicion absoluta */
+    top: 0; /* arriba */
+    left: 0; /* izquierda */
+    width: 100%; /* ancho */
+    height: 100%; /* alto */
+    border: none; /* sin borde*/
+}
+
+.term_img {
+    max-width: 50%;
+    min-width: 10%;
+}
+
+/* Sombra en productos */
+.prod {
+    box-shadow: 0 6px 10px rgb(14, 2, 80); 
+    border-radius: 0;
+}
+
+/* Sombra en formularios */
+.formulario {
+    background-color: #1b243a !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 10px rgb(14, 2, 80); 
+    border-radius: 0;
+}
+
+.text-titulo {
+    text-decoration: none;
+}
+
+.botones {
+    transition: transform 0.4s ease;
+    border-radius: 10%;
+    text-decoration: none;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 80%; /* tamaño del texto */
+}
+
+.botones:hover {
+    transform: scale(1.1);
+    border-radius: 12px;
+}
+
+.bt {
+    color: #1b243a ;
+    font-family: Arial, sans-serif; /* fuente */
+    text-decoration: none;
+    justify-content: center;
+    align-content: center;
+}
+
+.boton {
+    background:#b7c1d3  ; /* color de fondo */
+    color: #1b243a ;
+    width: 70%;
+    justify-content: center;
+    font-family: Arial, sans-serif; /* fuente */
+    font-size: 100%; /* tamaño del texto */
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+}
+
+/* estilos para los enlaces de navegación */
+.boton:hover {
+    transform: scale(1.1);
+    border-radius: 12px;
+}
+
+.custom-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.custom-row:hover {
+    background-color: #ddd;
+}
+
+.custom-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.small-table {
+    width: 50%; /* Ancho inicial de la tabla */
+    max-width: 50%; /* Ancho máximo de la tabla */
+    min-width: 30%; /* Ancho mínimo de la tabla */
+    margin: 0 auto; /* Centrar la tabla */
+}
+
+.color-nav{
+    color: #1b243a;
+}
+
+/* estilo de pie de página */
+footer {
+    padding: 20px 0; /* padding superior e inferior */
+    background-color: #1b243a !important; /* color de fondo */
+    text-align: center; /* centrar horizontalmente */
+    
+}
+
+/* color de los enlaces en el pie de pagina */
+footer a{
+    color: #c2c8c5 !important; /* color del enlace */
+}
+
+/* texto del pie de pagina */
+.footer-text {
+    margin: 0 ; /* sin margen */
+}
