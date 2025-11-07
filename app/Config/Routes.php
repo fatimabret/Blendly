@@ -34,7 +34,7 @@ $routes->post('contacto', 'ConsultaController::add_consulta');
 
 // Registro y Autenticación
 
-$routes->group('', function($routes) {
+$routes->group('', function ($routes) {
     $routes->get('registrar_cliente', 'UserController::registrar');
     $routes->post('registrar_cliente', 'UserController::add_cliente');
 
@@ -45,10 +45,11 @@ $routes->group('', function($routes) {
 
 // Usuario Registrado (no redirecciona a principal)
 
-$routes->group('', ['filter' => 'registered'], function($routes) {
+$routes->group('', ['filter' => 'registered'], function ($routes) {
     $routes->get('cerrar_sesion', 'UserController::cerrar_sesion');
     $routes->get('mi_perfil', 'UserController::mi_perfil');
     $routes->get('usuario/(:num)', 'UserController::usuario/$1');
+    $routes->post('actualizar_usuario', 'UserController::actualizar_usuario');
 
     // Carrito
     $routes->get('carrito', 'CarritoController::carrito');
@@ -56,6 +57,7 @@ $routes->group('', ['filter' => 'registered'], function($routes) {
     $routes->get('quitar/(:any)', 'CarritoController::borrar/$1');
     $routes->get('vaciar', 'CarritoController::vaciar');
     $routes->get('guardar_venta', 'CarritoController::guardar_venta');
+    $routes->post('actualizar_cantidad', 'CarritoController::actualizarCantidad');
 
     // Consultas del cliente
     $routes->get('mis_consultas', 'ConsultaController::mis_consultas');
@@ -73,11 +75,11 @@ $routes->group('', ['filter' => 'registered'], function($routes) {
 
 // Administración (Perfil = 2)
 
-$routes->group('', ['filter' => 'auth'], function($routes) {
+$routes->group('', ['filter' => 'auth'], function ($routes) {
 
     // Gestión de usuarios
     $routes->get('gestionar_user', 'UserController::gestionar_user');
-    $routes->get('estado/(:num)/(:num)', 'UserController::estado/$1/$2');
+    $routes->get('id_estado/(:num)/(:num)', 'UserController::estado/$1/$2');
     $routes->get('perfil/(:num)/(:num)', 'UserController::perfil/$1/$2');
 
     // Categorías

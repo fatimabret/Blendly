@@ -151,4 +151,39 @@ class CarritoController extends BaseController
         $cart->destroy();
         return redirect()->route('carrito')->with('mensaje', 'Carrito vaciado!');
     }
+
+    public function actualizarCantidad()
+{
+    $cart = \Config\Services::cart();
+    $request = \Config\Services::request();
+
+    $accion = $request->getPost('accion'); // 'sumar' o 'restar'
+    $rowid = $request->getPost('rowid');   // identificador único del producto
+
+    // Obtiene el contenido actual del carrito
+    $cartItems = $cart->contents();
+
+    if (isset($cartItems[$rowid])) {
+        $item = $cartItems[$rowid];
+        $qtyActual = $item['qty'];
+
+        // Actualiza según la acción
+        if ($accion === 'sumar') {
+            $qtyNueva = $qtyActual + 1;
+        } elseif ($accion === 'restar' && $qtyActual > 1) {
+            $qtyNueva = $qtyActual - 1;
+        } else {
+            $qtyNueva = $qtyActual;
+        }
+
+        // Actualiza el carrito
+        $cart->update([
+            'rowid' => $rowid,
+            'qty' => $qtyNueva
+        ]);
+    }
+
+    return redirect()->to(base_url('carrito'));
+}
+
 }

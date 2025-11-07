@@ -37,7 +37,7 @@ class ProductoController extends BaseController
 
         $validation->setRules(
             [
-                'nombre_producto' => 'required|max_length[50]',
+                'nombre_producto' => 'required|max_length[50]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
                 'proveedor_producto' => 'required',
                 'descripcion_producto' => 'required|max_length[110]',
                 'precio_producto' => 'required|max_length[10]',
@@ -48,7 +48,8 @@ class ProductoController extends BaseController
             [   // Errors
                 'nombre_producto'=>[
                     'required' => 'El nombre es obligatorio',
-                    'max_length' => 'El nombre no puede tener más de 50 caracteres'
+                    'max_length' => 'El nombre no puede tener más de 50 caracteres',
+                    'regex_match' => 'El nombre solo puede contener letras (no números ni símbolos)'
                 ],
                 'proveedor_producto' => [
                     'required' => 'El proveedor es obligatorio'

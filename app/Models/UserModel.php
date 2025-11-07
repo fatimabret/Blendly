@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use CodeIgniter\Model;
 
 class UserModel extends Model
@@ -15,7 +16,7 @@ class UserModel extends Model
         'correo_usuario',
         'pass_usuario',
         'perfil_usuario',
-        'estado_usuario'
+        'id_estado'
     ];
 
     protected $returnType = 'array'; // retorno

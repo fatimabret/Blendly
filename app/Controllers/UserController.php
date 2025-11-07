@@ -33,8 +33,12 @@ class UserController extends BaseController
     public function gestionar_user()
     {
         $usuario = new UserModel();
-        $data['clientes'] = $usuario->findAll();
-        $data['titulo']='Gestionar Usuarios';
+         $idUsuarioActivo = session('id_usuario'); // ID del usuario logueado
+
+        // Trae todos los usuarios excepto el activo
+        $data['clientes'] = $usuario
+        ->where('id_usuario !=', $idUsuarioActivo)
+        ->findAll();$data['titulo']='Gestionar Usuarios';
 
         return view('plantilla/encabezado', $data)
             .view('plantilla/barra')
@@ -76,36 +80,53 @@ class UserController extends BaseController
         
         return redirect()->to('gestionar_user')->with('mensaje', $mensaje);
     }
+public function actualizar_usuario()
+{
+    $request = \Config\Services::request();
+    $usuarioModel = new UserModel();
 
-    public function actualizar_usuario()
-    {
-        $request = \Config\Services::request();
-        $id = $request->getPost('id_usuario');
-        
-        $data = [
-            'nombre_usuario' => $request->getPost('nombre_usuario'),
-            'apellido_usuario' => $request->getPost('apellido_usuario'),
-            'edad_usuario' => $request->getPost('edad_usuario'),
-            'correo_usuario' => $request->getPost('correo_usuario')
-        ];
+    $id = $request->getPost('id_usuario');
+    $usuarioActual = $usuarioModel->find($id);
 
-        // Agregar la contraseña
-        if ($request->getPost('pass_usuario')) {
-            $data['pass_usuario'] = password_hash($request->getPost('pass_usuario'), PASSWORD_BCRYPT);
-        }
+    // Datos generales del usuario
+    $data = [
+        'nombre_usuario'   => $request->getPost('nombre_usuario'),
+        'apellido_usuario' => $request->getPost('apellido_usuario'),
+        'edad_usuario'     => $request->getPost('edad_usuario'),
+        'correo_usuario'   => $request->getPost('correo_usuario')
+    ];
 
-        $usuario = new UserModel();
+    $currentPassword = $request->getPost('current_password');
+    $newPassword = $request->getPost('new_password');
+    $confirmPassword = $request->getPost('confirm_password');
 
-        // verificar si hay datos válidos
-        if (!empty($data['nombre_usuario']) && !empty($data['apellido_usuario']) && !empty($data['edad_usuario']) && !empty($data['correo_usuario'])) {
-            $usuario->update($id, $data);
-            return redirect()->back()->withInput()->with('mensaje', 'Perfil actualizado exitosamente!');
-        } else {
-            // Manejar caso de datos no válidos
-            return redirect()->back()->withInput()->with('mensaje', 'Todos los campos son requeridos para actualizar el usuario');
-        }
+    // Validar campos obligatorios
+    if (empty($data['nombre_usuario']) || empty($data['apellido_usuario']) || empty($data['edad_usuario']) || empty($data['correo_usuario'])) {
+        return redirect()->back()->withInput()->with('mensaje', 'Todos los campos son requeridos.');
     }
 
+    // Si el usuario intenta cambiar su contraseña
+    if (!empty($currentPassword) || !empty($newPassword) || !empty($confirmPassword)) {
+
+        // 1️⃣ Verificar que la contraseña actual sea correcta
+        if (!password_verify($currentPassword, $usuarioActual['pass_usuario'])) {
+            return redirect()->back()->withInput()->with('mensaje', 'La contraseña actual no es correcta.');
+        }
+
+        // 2️⃣ Verificar que la nueva y la confirmación coincidan
+        if ($newPassword !== $confirmPassword) {
+            return redirect()->back()->withInput()->with('mensaje', 'La nueva contraseña y su confirmación no coinciden.');
+        }
+
+        // 3️⃣ Hashear y guardar la nueva contraseña
+        $data['pass_usuario'] = password_hash($newPassword, PASSWORD_BCRYPT);
+    }
+
+    // Actualizar los datos del usuario
+    $usuarioModel->update($id, $data);
+
+    return redirect()->back()->with('mensaje', 'Perfil actualizado exitosamente.');
+}
 
     
 
@@ -181,11 +202,6 @@ class UserController extends BaseController
         
         return redirect()->to('/');
     }
-
-    
-    
-
-
 
 
 //  ******** REGISTRAR USUARIO ********
