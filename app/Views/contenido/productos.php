@@ -83,10 +83,10 @@
                                         <p class="card-text"><?= $producto['descripcion_producto'] ?></p>
                                         <h5>$<?= $producto['precio_producto'] ?></h5>
                                         
-                                        <?php if ($producto['stock_producto'] != 0): ?>
+                                        <?php if ($producto['id_estado'] == 1 && $producto['stock_producto'] > 0): ?>
                                             <p class="card-footer"><strong>Stock:</strong> <?= $producto['stock_producto'] ?></p>
                                         <?php endif; ?>
-                                        
+
                                         <?php if (session()->get('perfil_usuario') == 1 && $producto['id_estado'] == 1): ?>
                                             <?= form_open('add_carrito', 'class="text-center p-auto"') ?>
                                                 <?= form_hidden('id_producto', $producto['id_producto']) ?>
@@ -102,7 +102,13 @@
                                         <?php if (session()->get('perfil_usuario') == 2 && $producto['id_estado'] == 1): ?>
                                             <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/0') ?>" class="btn btn-danger">Dar de baja</a>
                                         <?php elseif (session()->get('perfil_usuario') == 2 && $producto['id_estado'] == 0): ?>
-                                            <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/1') ?>" class="btn btn-success">Dar de alta</a>
+                                            <?php if ($producto['stock_producto'] > 0): ?>
+                                                <!-- Si tiene stock, puede activar -->
+                                                <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/1') ?>" class="btn btn-success">Dar de alta</a>
+                                            <?php else: ?>
+                                                <!-- Si NO tiene stock, dirigir a editar -->
+                                                <a href="<?= base_url('editar/' . $producto['id_producto']) ?>" class="btn btn-warning">Agregar Stock</a>
+                                            <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
                                 </div>

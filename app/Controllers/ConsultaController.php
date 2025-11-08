@@ -27,7 +27,7 @@ class ConsultaController extends BaseController
         $validation->setRules(
             [
                 'texto_consulta'=>'required|max_length[150]',
-                'motivo_consulta'=>'required|max_length[80]',
+                'motivo_consulta' => 'required|max_length[80]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
                 'correo_consulta'=>'required|valid_email',
                 'telefono_consulta'=>'required|max_length[20]|min_length[10]',
             ],
@@ -44,6 +44,7 @@ class ConsultaController extends BaseController
                     'required'=>'El motivo es obligatorio',
                     'min_length'=>'El motivo debe tener como mínimo 10 caracteres',
                     'max_length'=>'El motivo debe tener como máximo 80 caracteres',
+                    'regex_match' => 'El motivo solo puede contener letras y espacios, no números ni símbolos',
                 ],
                 'texto_consulta'=>[
                     'required'=>'El mensaje es obligatorio',
@@ -98,17 +99,28 @@ class ConsultaController extends BaseController
         .view('plantilla/footer');
     }
 
-    public function leido ($id=null)
+    public function leido($id = null)
     {
         $consulta = new ConsultaModel();
         $consultaData = $consulta->find($id);
 
-        // Cambiar el estado de 'leído'
+        if (!$consultaData) {
+            return redirect()->to('lista_consulta')->with('mensaje', 'Consulta no encontrada.');
+        }
+
+        // Si ya fue respondida, no se puede marcar como no leída
+        if (!empty($consultaData['respuesta_consulta'])) {
+            return redirect()->to('lista_consulta')->with('mensaje', 'No se puede cambiar el estado: la consulta ya fue respondida.');
+        }
+
+        // Cambiar estado normalmente si no fue respondida
         $estado = $consultaData['leido_consulta'] == 0 ? 1 : 0;
         $consulta->update($id, ['leido_consulta' => $estado]);
-        
+
         // Preparar el mensaje según el estado
-        $mensaje = $estado == 1 ? 'La consulta se marcó como leída correctamente!' : 'La consulta se marcó como no leída correctamente!';
+        $mensaje = $estado == 1
+            ? 'La consulta se marcó como leída correctamente.'
+            : 'La consulta se marcó como no leída correctamente.';
 
         return redirect()->to('lista_consulta')->with('mensaje', $mensaje);
     }
@@ -125,6 +137,7 @@ class ConsultaController extends BaseController
             // Actualizar la consulta con la respuesta
             $data = [
                 'respuesta_consulta' => $respuesta,
+                'leido_consulta' => 1, // Se marca automáticamente como leída
             ];
 
             $consultaModel->update($id, $data);

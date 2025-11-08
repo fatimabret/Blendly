@@ -41,9 +41,12 @@ class CategoriaController extends BaseController
         $data = [
             'productos' => $productos,
             'categorias' => $categorias,
-            'total_pages' => $pager,
+            'current_page' => $producto->pager->getCurrentPage(),
+            'total_pages' => $producto->pager->getPageCount(),
+            'pager' => $producto->pager,
             'titulo' => 'Productos'
         ];
+
 
         return view('plantilla/encabezado', $data)
             . view('plantilla/barra')
@@ -71,8 +74,10 @@ class CategoriaController extends BaseController
         $data = [
             'productos' => $productos,
             'categorias' => $categorias,
-            'total_pages' => $pager,
-            'titulo' => 'Más Vendidos'
+            'current_page' => $producto->pager->getCurrentPage(),
+            'total_pages' => $producto->pager->getPageCount(),
+            'pager' => $producto->pager,
+            'titulo' => 'Productos'
         ];
 
         return view('plantilla/encabezado', $data)
@@ -88,25 +93,20 @@ class CategoriaController extends BaseController
 
         $categorias = $categoriaModel->findAll();
 
-        $producto->select('producto.*, categoria.nombre_categoria')
+        // Realizamos el join y obtenemos los productos con paginación
+        $productos = $producto->select('producto.*, categoria.nombre_categoria')
                 ->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
                 ->orderBy('nombre_producto', $orden) // asc o desc
                 ->paginate(4); // Cantidad por página
 
-        // Ordenar productos por precio si se especifica el orden
-        if ($orden == 'asc') {
-            $producto->orderBy('nombre_producto', 'asc');
-        } elseif ($orden == 'desc') {
-            $producto->orderBy('nombre_producto', 'desc');
-        }
-
         $pager = $producto->pager;
 
         $data = [
-            'productos' => $producto->findAll(),
+            'productos' => $productos,
             'categorias' => $categorias,
             'current_page' => $producto->pager->getCurrentPage(),
-            'total_pages' => $pager,
+            'total_pages' => $producto->pager->getPageCount(),
+            'pager' => $producto->pager,
             'titulo' => 'Productos'
         ];
 
@@ -123,19 +123,22 @@ class CategoriaController extends BaseController
 
         $categorias = $categoriaModel->findAll();
 
-        $producto->select('producto.*, categoria.nombre_categoria')
+        // Realizamos el join y obtenemos los productos con paginación
+        $productos = $producto->select('producto.*, categoria.nombre_categoria')
                 ->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
                 ->orderBy('id_producto', $orden) // asc = más viejo, desc = más nuevo
                 ->paginate(4); // Cantidad por página
         $pager = $producto->pager;
 
         $data = [
-            'productos' => $producto->findAll(),
+            'productos' => $productos,
             'categorias' => $categorias,
             'current_page' => $producto->pager->getCurrentPage(),
-            'total_pages' => $pager,
+            'total_pages' => $producto->pager->getPageCount(),
+            'pager' => $producto->pager,
             'titulo' => 'Productos'
         ];
+
 
         return view('plantilla/encabezado', $data)
             . view('plantilla/barra')

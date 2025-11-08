@@ -76,7 +76,7 @@
                         <td colspan="3"><a href="<?php echo base_url('vaciar'); ?>" class="btn btn-warning">Vaciar
                                 Carrito</a></td>
                         <td colspan="3"><a href="<?php echo base_url('guardar_venta'); ?>"
-                                class="btn btn-success">Continuar Compra</a></td>
+                                class="btn btn-success">Confirmar Compra</a></td>
                     </tr>
                 </tbody>
             </table>

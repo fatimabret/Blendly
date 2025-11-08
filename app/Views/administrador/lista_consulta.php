@@ -35,11 +35,15 @@
                             <td><?php echo $row['motivo_consulta']; ?></td>
                             <td><?php echo $row['texto_consulta']; ?></td>
                             <td>
-                                <?php if (isset($row['leido_consulta']) && $row['leido_consulta'] == 0) { ?>
-                                    <a class="btn btn-success" href="<?php echo base_url('consulta/leido/'.$row['id_consulta']); ?>">Leido</a>
-                                <?php } else { ?>
-                                    <a class="btn btn-danger" href="<?php echo base_url('consulta/leido/'.$row['id_consulta']); ?>">No Leido</a>
-                                <?php } ?>
+                                <?php if (!empty($row['respuesta_consulta'])): ?>
+                                    <button class="btn btn-secondary" disabled>Leída</button>
+                                <?php else: ?>
+                                    <?php if ($row['leido_consulta'] == 0): ?>
+                                        <a class="btn btn-success" href="<?= base_url('consulta/leido/'.$row['id_consulta']); ?>">Marcar Leída</a>
+                                    <?php else: ?>
+                                        <a class="btn btn-danger" href="<?= base_url('consulta/leido/'.$row['id_consulta']); ?>">Marcar No Leída</a>
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             </td>
                             <td>
                                 <?php if (empty($row['respuesta_consulta'])) { ?>

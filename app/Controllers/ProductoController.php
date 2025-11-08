@@ -308,15 +308,31 @@ class ProductoController extends BaseController
     public function estado_producto($id_producto, $estado)
     {
         $producto = new ProductoModel();
-        $data = ['id_estado' => $estado];
+
+        // Obtener los datos actuales del producto
+        $prod = $producto->find($id_producto);
+
+        // Validar si existe el producto
+        if (!$prod) {
+            return redirect()->back()->with('mensaje', 'El producto no existe.');
+        }
+
+        // Si intenta ACTIVAR el producto (estado = 1) y no tiene stock
+        if ($estado == 1 && $prod['stock_producto'] <= 0) {
+            return redirect()->back()->with('mensaje', 'No se puede activar un producto sin stock.');
+        }
 
         // Actualiza el estado del producto
+        $data = ['id_estado' => $estado];
         $producto->update($id_producto, $data);
 
-        $mensaje = $estado == 0 ? 'Producto dado de baja exitosamente!' : 'Producto reactivado exitosamente!';
-        return redirect()->back()->withInput()->with('mensaje', $mensaje);
-    }
+        $mensaje = $estado == 0 
+            ? 'Producto dado de baja exitosamente.' 
+            : 'Producto activado correctamente.';
 
+        return redirect()->back()->with('mensaje', $mensaje);
+    }
+    
     public function buscar()
     {
         $query = $this->request->getGet('q');

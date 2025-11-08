@@ -86,12 +86,12 @@
                                 class="card-img-top" alt="<?= $producto['nombre_producto'] ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $producto['nombre_producto'] ?></h5>
-                                <h6>(<?= $producto['categoria_producto']; ?>)<br></h6>
+                                <h6>(<?= $producto['nombre_categoria']; ?>)<br></h6>
                                 <p class="card-text"><?= $producto['descripcion_producto'] ?></p>
                                 <h5>$<?= $producto['precio_producto'] ?></h5>
 
-                                <?php if ($producto['stock_producto'] != 0): ?>
-                                <p class="card-footer"><strong>Stock:</strong> <?= $producto['stock_producto'] ?></p>
+                                <?php if ($producto['id_estado'] == 1 && $producto['stock_producto'] > 0): ?>
+                                    <p class="card-footer"><strong>Stock:</strong> <?= $producto['stock_producto'] ?></p>
                                 <?php endif; ?>
 
                                 <?php if (session()->get('perfil_usuario') == 1 && $producto['id_estado'] == 1): ?>
@@ -112,9 +112,13 @@
                                 <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/0') ?>"
                                     class="btn btn-danger">Dar de baja</a>
                                 <?php elseif (session()->get('perfil_usuario') == 2 && $producto['id_estado'] == 0): ?>
-                                <!-- Botón para dar de alta -->
-                                <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/1') ?>"
-                                    class="btn btn-success">Dar de alta</a>
+                                    <?php if ($producto['stock_producto'] > 0): ?>
+                                        <!-- Si tiene stock, puede activar -->
+                                        <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/1') ?>" class="btn btn-success">Dar de alta</a>
+                                    <?php else: ?>
+                                        <!-- Si NO tiene stock, dirigir a editar -->
+                                        <a href="<?= base_url('editar/' . $producto['id_producto']) ?>" class="btn btn-warning">Agregar Stock</a>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -128,12 +132,38 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
 
-                        <?php if (isset($pager)): ?>
-                        <li class="page-item m-1">
-                            <div class="pagination justify-content-center page-link rounded-circle">
-                                <?= $pager->links() ?>
-                            </div>
-                        </li>
+                        <?php 
+                            // Detectar la URL base actual para mantener el filtro o categoría
+                            $uri = current_url();
+                        ?>
+
+                        <?php if ($current_page > 1): ?>
+                            <li class="page-item m-1">
+                                <a class="page-link rounded-circle" 
+                                href="<?= $uri . '?page=' . ($current_page - 1) ?>" 
+                                aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                            <li class="page-item <?= ($i == $current_page) ? 'active' : '' ?> m-1">
+                                <a class="page-link rounded-circle" 
+                                href="<?= $uri . '?page=' . $i ?>">
+                                    <?= $i ?>
+                                </a>
+                            </li>
+                        <?php endfor; ?>
+
+                        <?php if ($current_page < $total_pages): ?>
+                            <li class="page-item m-1">
+                                <a class="page-link rounded-circle" 
+                                href="<?= $uri . '?page=' . ($current_page + 1) ?>" 
+                                aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
                         <?php endif; ?>
 
                     </ul>

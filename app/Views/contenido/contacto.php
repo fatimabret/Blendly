@@ -80,8 +80,8 @@
                         
                         <div class="mb-3">
                             <label for="motivo_consulta" class="form-label">Motivo de la Consulta</label>
-                            <?php echo form_input(['name' => 'motivo_consulta', 'id' => 'motivo_consulta', 'type' => 'text', 'class' => 'form-control', 'placeholder' => '¿De que se trata?', 'value' => set_value('motivo_consulta')]) ?>
-                            
+                            <?php echo form_input(['name' => 'motivo_consulta','id' => 'motivo_consulta','type' => 'text','class' => 'form-control','placeholder' => '¿De qué se trata?','pattern' => '^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$','title' => 'Solo se permiten letras y espacios','value' => set_value('motivo_consulta')]) ?>
+
                         <!-- Verifica si hay errores de validación para el campo -->
                             <?php if (isset($validation) && $validation->hasError('motivo_consulta')): ?>
                                 <div class="alert alert-danger m-auto">
