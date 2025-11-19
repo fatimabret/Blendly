@@ -20,7 +20,6 @@
                         <th>Apellido</th>
                         <th>Edad</th>
                         <th>Correo</th>
-                        <th>Perfil</th>
                         <th>Estado</th>
                 </thead>
 
@@ -32,13 +31,6 @@
                                 <td><?php echo $row['apellido_usuario']; ?></td>
                                 <td><?php echo $row['edad_usuario']; ?></td>
                                 <td><?php echo $row['correo_usuario']; ?></td>
-                                <td>
-                                    <?php if ($row['perfil_usuario'] == 1) { ?>
-                                        <a class="btn btn-warning" href="<?php echo base_url('perfil/'.$row['id_usuario'].'/2'); ?>">Cliente</a>
-                                    <?php } else { ?>
-                                        <a class="btn btn-secondary" href="<?php echo base_url('perfil/'.$row['id_usuario'].'/1'); ?>">Administrador</a>
-                                    <?php } ?>
-                                </td>
                                 <td>
                                     <?php if ($row['id_estado'] == 1): ?>
                                         <a class="btn btn-success" href="<?php echo base_url('id_estado/'.$row['id_usuario'].'/0'); ?>">Alta</a>

@@ -4,6 +4,24 @@
 
     <div class="container-venta pt-3 pb-5">
         <div class="col col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12"> 
+        
+            <!-- Buscador por fechas -->
+            <form action="<?= base_url('ventas/buscar') ?>" method="get" class="row g-2 mb-4">
+                <div class="col-md-5">
+                    <label>Desde:</label>
+                    <input type="date" name="desde" class="form-control" required>
+                </div>
+
+                <div class="col-md-5">
+                    <label>Hasta:</label>
+                    <input type="date" name="hasta" class="form-control" required>
+                </div>
+
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" style="background: #1b243a;" class="btn btn-primary w-100 border -0">Buscar</button>
+                </div>
+            </form>
+            
             <div class="table-responsive">
                 <table id="mytable" class="table table-bordered table-striped table-hover">
                     <thead>

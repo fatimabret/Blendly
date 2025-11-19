@@ -122,4 +122,39 @@ class PedidoController extends BaseController
 
             //return redirect()->back()->with('mensaje', 'Error al procesar el pedido. Inténtalo de nuevo más tarde.');
 
+    public function buscar_ventas()
+    {
+        $desde = $this->request->getGet('desde');
+        $hasta = $this->request->getGet('hasta');
+
+        $data['titulo'] = 'Listado de Ventas';
+
+        $ventasModel = new PedidoModel();
+        $detalleVentaModel = new PedidoDetalleModel();
+
+        // Buscar ventas por rango de fechas
+        $ventas = $ventasModel
+            ->join('usuario', 'usuario.id_usuario = pedido.id_cliente')
+            ->where('fecha_pedido >=', $desde)
+            ->where('fecha_pedido <=', $hasta)
+            ->findAll();
+
+        // Calcular totales
+        foreach ($ventas as &$venta) {
+            $detalles = $detalleVentaModel->where('id_pedido', $venta['id_pedido'])->findAll();
+            $total = 0;
+            foreach ($detalles as $detalle) {
+                $total += $detalle['precio_unitario'] * $detalle['cantidad_pedido'];
+            }
+            $venta['total_venta'] = $total;
+        }
+
+        $data['pedidos'] = $ventas;
+
+        return view('plantilla/encabezado', $data)
+            .view('plantilla/barra')
+            .view('administrador/ventas', $data)
+            .view('plantilla/footer');
+    }
+
 }

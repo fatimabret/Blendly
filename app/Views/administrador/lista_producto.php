@@ -10,6 +10,15 @@
     </main>
 
     <div class="container">
+        <nav class="navba1r m-0">
+            <div class="container-fluid mt-3 mb-3 w-50">
+                <form class="d-flex" action="<?= base_url('buscar_producto_admin') ?>" method="get">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Nombre del producto o categoria" aria-label="Buscar">
+                    <button type="submit" style="background: #1b243a;" class="btn btn-primary border -0">Buscar</button>
+                </form>
+            </div>
+        </nav>
+
         <div class="table-responsive">
             <table id="mytable" class="table table-bordered table-striped table-hover custom-table formulario">
                 <thead>
@@ -55,8 +64,7 @@
         <h1 class="display-3 text-center text-white m-2 pt-2 pb-2">Lista de Categorías</h1>
         
         <div class="table-responsive">
-            <table id="mytable" class="table table-bordered tap
-            ble-striped table-hover custom-table formulario small-table">
+            <table id="mytable" class="table table-bordered tapble-striped table-hover custom-table formulario small-table">
                 <thead>
                     <tr>
                         <th>Nombre</th>

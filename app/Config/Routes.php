@@ -80,7 +80,6 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     // Gestión de usuarios
     $routes->get('gestionar_user', 'UserController::gestionar_user');
     $routes->get('id_estado/(:num)/(:num)', 'UserController::estado/$1/$2');
-    $routes->get('perfil/(:num)/(:num)', 'UserController::perfil/$1/$2');
 
     // Categorías
     $routes->get('add_categoria', 'CategoriaController::add_categoria');
@@ -94,6 +93,8 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('gestionar_prod', 'ProductoController::gestionar_prod');
     $routes->get('lista_producto', 'ProductoController::lista_producto');
     $routes->get('estado_producto/(:num)/(:num)', 'ProductoController::estado_producto/$1/$2');
+    $routes->get('buscar_producto_admin', 'ProductoController::buscar_admin');
+    $routes->get('buscar_gestion', 'ProductoController::buscar_gestion');
 
     // Proveedores
     $routes->get('add_proveedor', 'ProveedorController::add_proveedor');
@@ -104,4 +105,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('lista_consulta', 'ConsultaController::gestionar_consultas');
     $routes->get('consulta/leido/(:num)', 'ConsultaController::leido/$1');
     $routes->post('consulta/responder/(:num)', 'ConsultaController::responder/$1');
+
+    // Pedidos
+    $routes->get('ventas/buscar', 'PedidoController::buscar_ventas');
 });

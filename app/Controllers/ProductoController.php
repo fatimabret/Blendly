@@ -11,6 +11,78 @@ class ProductoController extends BaseController
 {
     protected $helpers = ['url','form'];
 
+    public function productos($page = 1)
+    {
+        $producto = new ProductoModel();
+        $categoria = new CategoriaModel();
+        
+        $limit = 4; // Número de productos por página
+        $offset = ($page - 1) * $limit;
+
+        // Obtener el total de productos
+        $total_productos = $producto->countAllResults();
+        
+        // Obtener los productos con límite y offset para la paginación
+        $productos = $producto->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
+                              ->join('proveedor', 'proveedor.id_proveedor = producto.proveedor_producto')
+                              ->limit($limit, $offset)
+                              ->findAll();
+
+        // Obtener todas las categorías
+        $categorias = $categoria->findAll();
+
+        // Calcular el número total de páginas
+        $total_pages = ceil($total_productos / $limit);
+
+        $data = [
+            'productos' => $productos,
+            'categorias' => $categorias,
+            'total_pages' => $total_pages,
+            'current_page' => $page,
+            'titulo' => 'Productos'
+        ];
+
+        return view('plantilla/encabezado', $data)
+            .view('plantilla/barra')
+            .view('contenido/productos', $data)
+            .view('plantilla/footer');
+    }
+    
+    public function buscar()
+    {
+        $query = $this->request->getGet('q');
+        $producto = new ProductoModel();
+        $categoria = new CategoriaModel();
+
+        $productos = $producto
+            ->select('producto.*, categoria.nombre_categoria')
+            ->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
+            ->groupStart()
+                ->like('producto.nombre_producto', $query)
+                ->orLike('categoria.nombre_categoria', $query)
+            ->groupEnd()
+            ->paginate(4); // Cantidad por página
+
+        $pager = \Config\Services::pager();
+        $categorias = $categoria->findAll();
+
+        $data = [
+            'productos' => $productos,
+            'categorias' => $categorias,
+            'pager' => $pager,
+            'titulo' => 'Resultados de búsqueda',
+            'current_page' => $producto->pager->getCurrentPage(),
+            'total_pages' => $producto->pager->getPageCount()
+        ];
+
+        return view('plantilla/encabezado', $data)
+            . view('plantilla/barra')
+            . view('contenido/productos', $data)
+            . view('plantilla/footer');
+    }
+
+// ADMINISTRADOR
+
     public function add_producto()
     {
         $validation = \Config\Services::validation();
@@ -163,43 +235,6 @@ class ProductoController extends BaseController
         .view('plantilla/footer');
     }
 
-    public function productos($page = 1)
-    {
-        $producto = new ProductoModel();
-        $categoria = new CategoriaModel();
-        
-        $limit = 4; // Número de productos por página
-        $offset = ($page - 1) * $limit;
-
-        // Obtener el total de productos
-        $total_productos = $producto->countAllResults();
-        
-        // Obtener los productos con límite y offset para la paginación
-        $productos = $producto->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
-                              ->join('proveedor', 'proveedor.id_proveedor = producto.proveedor_producto')
-                              ->limit($limit, $offset)
-                              ->findAll();
-
-        // Obtener todas las categorías
-        $categorias = $categoria->findAll();
-
-        // Calcular el número total de páginas
-        $total_pages = ceil($total_productos / $limit);
-
-        $data = [
-            'productos' => $productos,
-            'categorias' => $categorias,
-            'total_pages' => $total_pages,
-            'current_page' => $page,
-            'titulo' => 'Productos'
-        ];
-
-        return view('plantilla/encabezado', $data)
-            .view('plantilla/barra')
-            .view('contenido/productos', $data)
-            .view('plantilla/footer');
-    }
-
     public function editar_producto($id = null)
     {
         $producto = new ProductoModel();
@@ -222,7 +257,6 @@ class ProductoController extends BaseController
         .view('administrador/modificar_prod', $data)
         .view('plantilla/footer');
     }
-
 
     public function actualizar_producto()
     {
@@ -332,38 +366,108 @@ class ProductoController extends BaseController
 
         return redirect()->back()->with('mensaje', $mensaje);
     }
-    
-    public function buscar()
+
+    public function buscar_admin()
     {
-        $query = $this->request->getGet('q');
+        $q = $this->request->getGet('q');
+
         $producto = new ProductoModel();
         $categoria = new CategoriaModel();
 
-        $productos = $producto
-            ->select('producto.*, categoria.nombre_categoria')
-            ->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
-            ->groupStart()
-                ->like('producto.nombre_producto', $query)
-                ->orLike('categoria.nombre_categoria', $query)
-            ->groupEnd()
-            ->paginate(4); // Cantidad por página
+        // Si no escribió nada, volver a lista completa
+        if (empty($q)) {
+            return redirect()->to(base_url('lista_producto'));
+        }
 
-        $pager = \Config\Services::pager();
+        // Buscar por nombre de producto o nombre de categoría
+        $productos = $producto
+            ->select('producto.*, categoria.nombre_categoria, proveedor.nombre_proveedor')
+            ->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
+            ->join('proveedor', 'proveedor.id_proveedor = producto.proveedor_producto')
+            ->like('producto.nombre_producto', $q)
+            ->orLike('categoria.nombre_categoria', $q)
+            ->findAll();
+
         $categorias = $categoria->findAll();
 
         $data = [
-            'productos' => $productos,
-            'categorias' => $categorias,
-            'pager' => $pager,
-            'titulo' => 'Resultados de búsqueda',
-            'current_page' => $producto->pager->getCurrentPage(),
-            'total_pages' => $producto->pager->getPageCount()
+            'titulo'     => 'Productos y Categoría',
+            'productos'  => $productos,
+            'categorias' => $categorias
         ];
 
         return view('plantilla/encabezado', $data)
-            . view('plantilla/barra')
-            . view('contenido/productos', $data)
-            . view('plantilla/footer');
+            .view('plantilla/barra')
+            .view('administrador/lista_producto', $data)
+            .view('plantilla/footer');
+    }
+
+    public function buscar_gestion()
+    {
+        $q = $this->request->getGet('q');
+        $precio_min = $this->request->getGet('precio_min');
+        $precio_max = $this->request->getGet('precio_max');
+        $stock_min = $this->request->getGet('stock_min');
+        $stock_max = $this->request->getGet('stock_max');
+        $estado = $this->request->getGet('estado');
+
+        // Validar que precio y stock no sean negativos
+        if ($precio_min < 0 || $precio_max < 0) {
+            return redirect()->back()->with('mensaje', 'El precio no puede ser negativo.');
+        }
+
+        if ($stock_min < 0 || $stock_max < 0) {
+            return redirect()->back()->with('mensaje', 'El stock no puede ser negativo.');
+        }
+
+        // Validar que el nombre (q) NO tenga números
+        if (!empty($q) && preg_match('/[0-9]/', $q)) {
+            return redirect()->back()->with('mensaje', 'El nombre no puede contener números.');
+        }
+
+        $producto = new ProductoModel();
+
+        $producto->select('producto.*, categoria.nombre_categoria, proveedor.nombre_proveedor')
+                ->join('categoria', 'categoria.id_categoria = producto.categoria_producto')
+                ->join('proveedor', 'proveedor.id_proveedor = producto.proveedor_producto');
+
+        // Texto libre (nombre, categoría, proveedor)
+        if (!empty($q)) {
+            $producto->groupStart()
+                    ->like('producto.nombre_producto', $q)
+                    ->orLike('categoria.nombre_categoria', $q)
+                    ->orLike('proveedor.nombre_proveedor', $q)
+                    ->groupEnd();
+        }
+
+        // Precio 
+        if ($precio_min !== null && $precio_min !== "") {
+            $producto->where('producto.precio_producto >=', $precio_min);
+        }
+        if ($precio_max !== null && $precio_max !== "") {
+            $producto->where('producto.precio_producto <=', $precio_max);
+        }
+
+        // Stock 
+        if ($stock_min !== null && $stock_min !== "") {
+            $producto->where('producto.stock_producto >=', $stock_min);
+        }
+        if ($stock_max !== null && $stock_max !== "") {
+            $producto->where('producto.stock_producto <=', $stock_max);
+        }
+
+        // Estado (1 activo, 0 baja)
+        if ($estado !== "" && $estado !== null) {
+            $producto->where('producto.id_estado', $estado);
+        }
+
+        $data['productos'] = $producto->findAll();
+        $data['titulo'] = 'Gestionar Productos';
+
+        return view('plantilla/encabezado', $data)
+            .view('plantilla/barra')
+            .view('administrador/gestionar_prod', $data)
+            .view('plantilla/footer');
     }
 
 }

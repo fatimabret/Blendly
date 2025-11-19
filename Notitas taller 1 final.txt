@@ -1,8 +1,20 @@
-taller 1 final
+Cosita que faltan para el final de taller 1
 
-Cuando confirmas compra en el carrito te muestre un modal con el detalle de compra y confirmamos ok
+LA HAMBUEGUESA FUNCIONA CUANDO QUIERE
 
-Imprimir factura
+Cuando visualizas las consultas que marque cuando son clientes registrados y le pueda marcar como leído y no leído, caso contrario solo se responda mandando un "correo"
+
+Cuando confirmas compra en el carrito te muestre un modal solicitando dni, dirección y teléfono del cliente con el detalle de compra y confirmamos ok
+
+Imprimir factura:
 - un model con los detalles
 - imprima ese model con los datos del cliente y detalles de la compra
 - método de pago
+
+
+----	TERMINADO	----
+
+- El administrador no puede cambiar el tipo de perfil a los clientes (solo se puede dar de baja y alta)
+- Buscador en ventas por fechas
+- Buscador en gestor de productos y lista de productos
+

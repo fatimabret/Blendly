@@ -92,11 +92,11 @@
 
                            <?php if (session()->get('perfil_usuario') == 2 && $producto['id_estado'] == 1): ?>
                               <!-- Botón para dar de baja -->
-                              <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/0') ?>" class="btn btn-danger">Dar de baja</a>
+                              <a href="<?= base_url('estado_producto/' . $producto['id_producto'].'/0') ?>" class="btn btn-danger">Dar de baja</a>
                            <?php elseif (session()->get('perfil_usuario') == 2 && $producto['id_estado'] == 0): ?>
                               <?php if ($producto['stock_producto'] > 0): ?>
                                  <!-- Si tiene stock, puede activar -->
-                                 <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/1') ?>" class="btn btn-success">Dar de alta</a>
+                                 <a href="<?= base_url('estado_producto/' . $producto['id_producto'].'/1') ?>" class="btn btn-success">Dar de alta</a>
                               <?php else: ?>
                                  <!-- Si NO tiene stock, dirigir a editar -->
                                  <a href="<?= base_url('editar/' . $producto['id_producto']) ?>" class="btn btn-warning">Agregar Stock</a>
@@ -159,11 +159,11 @@
 
                            <?php if (session()->get('perfil_usuario') == 2 && $producto['id_estado'] == 1): ?>
                               <!-- Botón para dar de baja -->
-                              <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/0') ?>" class="btn btn-danger">Dar de baja</a>
+                              <a href="<?= base_url('estado_producto/' . $producto['id_producto'].'/0') ?>" class="btn btn-danger">Dar de baja</a>
                            <?php elseif (session()->get('perfil_usuario') == 2 && $producto['id_estado'] == 0): ?>
                               <?php if ($producto['stock_producto'] > 0): ?>
                                  <!-- Si tiene stock, puede activar -->
-                                 <a href="<?= base_url('id_estado/' . $producto['id_producto'].'/1') ?>" class="btn btn-success">Dar de alta</a>
+                                 <a href="<?= base_url('estado_producto/' . $producto['id_producto'].'/1') ?>" class="btn btn-success">Dar de alta</a>
                               <?php else: ?>
                                  <!-- Si NO tiene stock, dirigir a editar -->
                                  <a href="<?= base_url('editar/' . $producto['id_producto']) ?>" class="btn btn-warning">Agregar Stock</a>

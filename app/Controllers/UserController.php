@@ -64,23 +64,6 @@ class UserController extends BaseController
         return redirect()->back()->withInput()->with('mensaje', $mensaje);
     }
 
-    public function perfil($id_usuario, $perfil)
-    {
-        $usuario = new UserModel();
-        $data = ['perfil_usuario' => $perfil];
-
-        if (session()->get('id_usuario') == $id_usuario) {
-            return redirect()->to('gestionar_user')->with('mensaje', 'No se puede cambiar el rol propio');
-        }
-
-        // Actualiza el perfil del usuario
-        $usuario->update($id_usuario, $data);
-
-        $mensaje = $perfil == 1 ? 'Usuario cambiado a perfil de CLIENTE!' : 'Usuario cambiado a perfil de ADMINISTRADOR!';
-        
-        return redirect()->to('gestionar_user')->with('mensaje', $mensaje);
-    }
-
     public function actualizar_usuario()
     {
         $request = \Config\Services::request();
