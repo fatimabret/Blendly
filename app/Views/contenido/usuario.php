@@ -21,12 +21,12 @@
                 <!-- Campos del formulario -->
                 <div class="mb-3">
                     <label for="nombre_usuario">Nombre</label>
-                    <?= form_input(['name' => 'nombre_usuario', 'id' => 'nombre_usuario', 'class' => 'form-control', 'autofocus' => 'autofocus', 'value' => $usuario['nombre_usuario']]); ?>
+                    <?= form_input(['name' => 'nombre_usuario', 'id' => 'nombre_usuario', 'class' => 'form-control', 'value' => $usuario['nombre_usuario'], 'pattern' => '^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$', 'title' => 'Solo se permiten letras y espacios']); ?>
                 </div>
 
                 <div class="mb-3">
                     <label for="apellido_usuario">Apellido</label>
-                    <?= form_input(['name' => 'apellido_usuario', 'id' => 'apellido_usuario', 'class' => 'form-control', 'autofocus' => 'autofocus', 'value' => $usuario['apellido_usuario']]); ?>
+                    <?= form_input(['name' => 'apellido_usuario', 'id' => 'apellido_usuario', 'class' => 'form-control',  'value' => $usuario['apellido_usuario'], 'pattern' => '^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$', 'title' => 'Solo se permiten letras y espacios']); ?>
                 </div>
 
                 <div class="mb-3">

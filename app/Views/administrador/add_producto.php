@@ -70,7 +70,7 @@
 
                         <div class="mb-3">
                             <label for="precio_producto" class="form-label">Precio</label>
-                            <?php echo form_input(['name' => 'precio_producto', 'id' => 'precio_producto', 'min' => '0', 'class' => 'form-control form-input', 'value' => set_value('precio_producto'), 'placeholder' => 'Ej. 999.99']); ?>
+                            <?php echo form_input(['name' => 'precio_producto', 'id' => 'precio_producto', 'class' => 'form-control form-input', 'value' => set_value('precio_producto'), 'placeholder' => 'Ej. 999.99', 'pattern' => '^[0-9]+(\.[0-9]{1,2})?$', 'title' => 'Solo números, opcional decimal (Ej: 100 o 100.50)']); ?>
 
                             <!--  Condicion para visualizar los errores de validacion  -->
                             <?php if (isset($validation) && $validation->hasError('precio_producto')): ?>

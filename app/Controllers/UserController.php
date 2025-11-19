@@ -80,53 +80,70 @@ class UserController extends BaseController
         
         return redirect()->to('gestionar_user')->with('mensaje', $mensaje);
     }
-public function actualizar_usuario()
-{
-    $request = \Config\Services::request();
-    $usuarioModel = new UserModel();
 
-    $id = $request->getPost('id_usuario');
-    $usuarioActual = $usuarioModel->find($id);
+    public function actualizar_usuario()
+    {
+        $request = \Config\Services::request();
+        $usuarioModel = new UserModel();
 
-    // Datos generales del usuario
-    $data = [
-        'nombre_usuario'   => $request->getPost('nombre_usuario'),
-        'apellido_usuario' => $request->getPost('apellido_usuario'),
-        'edad_usuario'     => $request->getPost('edad_usuario'),
-        'correo_usuario'   => $request->getPost('correo_usuario')
-    ];
+        $id = $request->getPost('id_usuario');
+        $usuarioActual = $usuarioModel->find($id);
 
-    $currentPassword = $request->getPost('current_password');
-    $newPassword = $request->getPost('new_password');
-    $confirmPassword = $request->getPost('confirm_password');
+        // Datos a modificar siempre
+        $data = [
+            'nombre_usuario'   => $request->getPost('nombre_usuario'),
+            'apellido_usuario' => $request->getPost('apellido_usuario'),
+            'edad_usuario'     => $request->getPost('edad_usuario'),
+            'correo_usuario'   => $request->getPost('correo_usuario')
+        ];
 
-    // Validar campos obligatorios
-    if (empty($data['nombre_usuario']) || empty($data['apellido_usuario']) || empty($data['edad_usuario']) || empty($data['correo_usuario'])) {
-        return redirect()->back()->withInput()->with('mensaje', 'Todos los campos son requeridos.');
-    }
-
-    // Si el usuario intenta cambiar su contraseña
-    if (!empty($currentPassword) || !empty($newPassword) || !empty($confirmPassword)) {
-
-        // 1️⃣ Verificar que la contraseña actual sea correcta
-        if (!password_verify($currentPassword, $usuarioActual['pass_usuario'])) {
-            return redirect()->back()->withInput()->with('mensaje', 'La contraseña actual no es correcta.');
+        // VALIDACIÓN NOMBRE Y APELLIDO
+        if (!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/', $data['nombre_usuario'])) {
+            return redirect()->back()->withInput()->with('mensaje', 'El nombre solo puede contener letras y espacios.');
         }
 
-        // 2️⃣ Verificar que la nueva y la confirmación coincidan
-        if ($newPassword !== $confirmPassword) {
-            return redirect()->back()->withInput()->with('mensaje', 'La nueva contraseña y su confirmación no coinciden.');
+        if (!preg_match('/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/', $data['apellido_usuario'])) {
+            return redirect()->back()->withInput()->with('mensaje', 'El apellido solo puede contener letras y espacios.');
         }
 
-        // 3️⃣ Hashear y guardar la nueva contraseña
-        $data['pass_usuario'] = password_hash($newPassword, PASSWORD_BCRYPT);
+        // Validar campos obligatorios
+        if (empty($data['nombre_usuario']) || empty($data['apellido_usuario']) || empty($data['edad_usuario']) || empty($data['correo_usuario'])) {
+            return redirect()->back()->withInput()->with('mensaje', 'Todos los campos son requeridos.');
+        }
+
+        // VALIDACIÓN Y CAMBIO DE CONTRASEÑA
+        $currentPassword = $request->getPost('current_password');
+        $newPassword = $request->getPost('new_password');
+        $confirmPassword = $request->getPost('confirm_password');
+
+        $camposPasswordCompletos = 
+            !empty($currentPassword) &&
+            !empty($newPassword) &&
+            !empty($confirmPassword);
+
+        // Si se completaron los 3 campos, recién ahí cambiamos contraseña
+        if ($camposPasswordCompletos) {
+
+            // Contraseña actual correcta
+            if (!password_verify($currentPassword, $usuarioActual['pass_usuario'])) {
+                return redirect()->back()->withInput()->with('mensaje', 'La contraseña actual no es correcta.');
+            }
+
+            // Nueva contraseña coincide
+            if ($newPassword !== $confirmPassword) {
+                return redirect()->back()->withInput()->with('mensaje', 'La nueva contraseña y su confirmación no coinciden.');
+            }
+
+            // Guardar nueva contraseña
+            $data['pass_usuario'] = password_hash($newPassword, PASSWORD_BCRYPT);
+        }
+
+        // ACTUALIZAR DATOS DEL USUARIO
+        $usuarioModel->update($id, $data);
+
+        return redirect()->back()->with('mensaje', 'Perfil actualizado exitosamente.');
     }
 
-    // Actualizar los datos del usuario
-    $usuarioModel->update($id, $data);
-
-    return redirect()->back()->with('mensaje', 'Perfil actualizado exitosamente.');
-}
 
     
 
@@ -222,19 +239,21 @@ public function actualizar_usuario()
         // Reglas de validación para los campos
         $validation->setRules(
             [
-                'nombre_usuario'=>'required|max_length[50]',
-                'apellido_usuario'=>'required|max_length[50]',
+                'nombre_usuario' => 'required|max_length[50]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
+                'apellido_usuario' => 'required|max_length[50]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
                 'edad_usuario' => 'required|integer',
                 'correo_usuario'=>'required|valid_email|is_unique[usuario.correo_usuario]',
                 'pass_usuario'=>'required|min_length[8]',
                 'repass_usuario'=>'required|min_length[8]|matches[pass_usuario]'
             ],
             [   // Errors
-                'nombre_usuario'=>[
-                    'required'=>'El nombre es obligatorio',
+                'nombre_usuario' => [
+                    'required' => 'El nombre es obligatorio',
+                    'regex_match' => 'El nombre solo puede contener letras y espacios'
                 ],
-                'apellido_usuario'=>[
-                    'required'=>'El apellido es obligatorio',
+                'apellido_usuario' => [
+                    'required' => 'El apellido es obligatorio',
+                    'regex_match' => 'El apellido solo puede contener letras y espacios'
                 ],
                 'edad_usuario' => [
                     'required'=>'La edad es obligatoria',

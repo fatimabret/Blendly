@@ -33,26 +33,37 @@ class CarritoController extends BaseController
         $request = \Config\Services::request();
 
         $productoModel = new ProductoModel();
-        $producto = $productoModel->find($request->getPost('id_producto'));
+        $idProducto = $request->getPost('id_producto');
 
-        $data = array(
-            'id' => $request->getPost('id_producto'),
+        // Obtener producto desde BD
+        $producto = $productoModel->find($idProducto);
+
+        if (!$producto) {
+            return redirect()->back()->with('mensaje', 'Producto no encontrado.');
+        }
+
+        $stockDisponible = $producto['stock_producto'];
+
+        // Revisar cuánto del producto YA está en el carrito
+        $cantidadEnCarrito = 0;
+        foreach ($cart->contents() as $item) {
+            if ($item['id'] == $idProducto) {
+                $cantidadEnCarrito += $item['qty'];
+            }
+        }
+
+        // Si ya llegó al tope del stock
+        if ($cantidadEnCarrito >= $stockDisponible) {
+            return redirect()->route('carrito')->with('mensaje', '¡No puedes agregar más unidades, llegaste al límite de stock!');
+        }
+
+        // Agregar 1 unidad
+        $data = [
+            'id' => $idProducto,
             'name' => $request->getPost('nombre_producto'),
             'price' => $request->getPost('precio_producto'),
             'qty' => 1
-        );
-
-        $cart1 = $cart->contents();
-
-        foreach ($cart1 as $item)
-        {
-            $producto = $productoModel->where('id_producto', $item['id'])->first();
-
-            if ($producto['stock_producto'] < $item['qty'] || $producto['stock_producto'] == 0)
-            {
-                return redirect()->route('carrito')->with('mensaje', '¡No hay Stock!');
-            }
-        }
+        ];
 
         $cart->insert($data);
 
@@ -153,37 +164,49 @@ class CarritoController extends BaseController
     }
 
     public function actualizarCantidad()
-{
-    $cart = \Config\Services::cart();
-    $request = \Config\Services::request();
+    {
+        $cart = \Config\Services::cart();
+        $request = \Config\Services::request();
+        $productoModel = new ProductoModel();
 
-    $accion = $request->getPost('accion'); // 'sumar' o 'restar'
-    $rowid = $request->getPost('rowid');   // identificador único del producto
+        $accion = $request->getPost('accion'); 
+        $rowid = $request->getPost('rowid');   
 
-    // Obtiene el contenido actual del carrito
-    $cartItems = $cart->contents();
+        $cartItems = $cart->contents();
 
-    if (isset($cartItems[$rowid])) {
-        $item = $cartItems[$rowid];
-        $qtyActual = $item['qty'];
+        if (isset($cartItems[$rowid])) {
 
-        // Actualiza según la acción
-        if ($accion === 'sumar') {
-            $qtyNueva = $qtyActual + 1;
-        } elseif ($accion === 'restar' && $qtyActual > 1) {
-            $qtyNueva = $qtyActual - 1;
-        } else {
-            $qtyNueva = $qtyActual;
+            $item = $cartItems[$rowid];
+            $qtyActual = $item['qty'];
+            $idProducto = $item['id'];
+
+            // Buscar stock real del producto
+            $producto = $productoModel->find($idProducto);
+            $stockDisponible = $producto['stock_producto'];
+
+            // Determinar nueva cantidad
+            if ($accion === 'sumar') {
+
+                if ($qtyActual + 1 > $stockDisponible) {
+                    return redirect()->back()->with('mensaje', 'No puedes agregar más de lo disponible en stock.');
+                }
+
+                $qtyNueva = $qtyActual + 1;
+
+            } elseif ($accion === 'restar' && $qtyActual > 1) {
+                $qtyNueva = $qtyActual - 1;
+            } else {
+                $qtyNueva = $qtyActual;
+            }
+
+            // Actualizar carrito
+            $cart->update([
+                'rowid' => $rowid,
+                'qty' => $qtyNueva
+            ]);
         }
 
-        // Actualiza el carrito
-        $cart->update([
-            'rowid' => $rowid,
-            'qty' => $qtyNueva
-        ]);
+        return redirect()->to(base_url('carrito'));
     }
-
-    return redirect()->to(base_url('carrito'));
-}
 
 }

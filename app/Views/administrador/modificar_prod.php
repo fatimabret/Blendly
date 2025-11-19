@@ -54,7 +54,8 @@
 
                 <div class="mb-3">
                     <label for="precio_producto">Precio</label>
-                    <?php echo form_input(['name' => 'precio_producto', 'id' => 'precio_producto', 'min' => '0', 'class' => 'form-control', 'autofocus' => 'autofocus', 'value' => $producto['precio_producto'] ]); ?>
+                    <?php echo form_input(['name' => 'precio_producto', 'id' => 'precio_producto', 'class' => 'form-control', 'autofocus' => 'autofocus', 'value' => $producto['precio_producto'], 'pattern' => '^[0-9]+(\.[0-9]{1,2})?$',  'title' => 'Solo números. Puede incluir decimales como 1500.50']); ?>
+
                     <?php if (isset($validation) && $validation->hasError('precio_producto')): ?>
                         <div class="alert alert-danger mt-2">
                             <?= $validation->getError('precio_producto'); ?>

@@ -1,0 +1,8 @@
+taller 1 final
+
+Cuando confirmas compra en el carrito te muestre un modal con el detalle de compra y confirmamos ok
+
+Imprimir factura
+- un model con los detalles
+- imprima ese model con los datos del cliente y detalles de la compra
+- método de pago

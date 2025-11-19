@@ -29,16 +29,19 @@ class ConsultaController extends BaseController
                 'texto_consulta'=>'required|max_length[150]',
                 'motivo_consulta' => 'required|max_length[80]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
                 'correo_consulta'=>'required|valid_email',
-                'telefono_consulta'=>'required|max_length[20]|min_length[10]',
+                'telefono_consulta' => 'required|min_length[10]|max_length[20]|regex_match[/^[0-9]+$/]',
+
             ],
             [   // Errors
                 'correo_consulta'=>[
                     'required'=>'El correo es obligatorio',
                     'valid_email'=>'La dirección de correo debe ser válida',
                 ],
-                'telefono_consulta'=>[
-                    'required'=>'El telefono es obligatorio',
-                    'min_length'=>'El teléfono de la consulta debe tener como mínimo 10 caracteres'
+                'telefono_consulta' => [
+                    'required'   => 'El teléfono es obligatorio',
+                    'min_length' => 'El teléfono debe tener como mínimo 10 caracteres',
+                    'max_length' => 'El teléfono debe tener como máximo 20 caracteres',
+                    'regex_match' => 'El teléfono solo puede contener números',
                 ],
                 'motivo_consulta'=>[
                     'required'=>'El motivo es obligatorio',

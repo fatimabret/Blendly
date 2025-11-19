@@ -40,7 +40,7 @@ class ProductoController extends BaseController
                 'nombre_producto' => 'required|max_length[50]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
                 'proveedor_producto' => 'required',
                 'descripcion_producto' => 'required|max_length[110]',
-                'precio_producto' => 'required|max_length[10]',
+                'precio_producto' => 'required|regex_match[/^[0-9]+(\.[0-9]{1,2})?$/]',
                 'imagen_producto' => 'uploaded[imagen_producto]|max_size[imagen_producto,4096]|is_image[imagen_producto]',
                 'stock_producto' => 'required|max_length[3]',
                 'categoria_producto' => 'required'
@@ -59,8 +59,8 @@ class ProductoController extends BaseController
                     'max_length' => 'La descripcion no puede tener más de 110 caracteres'
                 ],
                 'precio_producto' => [
-                    'required' => 'El precio es obligatorio',
-                    'max_length' => 'El precio no puede tener más de 10 unidades'
+                'required' => 'El precio es obligatorio',
+                'regex_match' => 'El precio solo puede contener números (opcional decimal)'
                 ],
                 'imagen_producto' => [
                     'uploaded' => 'Es obligatorio subir una imagen del producto',

@@ -66,8 +66,8 @@
 
                         <div class="mb-3">
                             <label for="telefono_consulta" class="form-label">Número de teléfono</label>
-                            <?php echo form_input(['name' => 'telefono_consulta', 'id' => 'telefono_consulta', 'type' => 'text', 'class' => 'form-control', 'placeholder' => '+54 0800-800', 'value' => set_value('telefono_consulta')]) ?>
-                            
+                            <?php echo form_input(['name' => 'telefono_consulta','id' => 'telefono_consulta','type' => 'text','class' => 'form-control','placeholder' => '+54 0800-800','pattern' => '^[0-9]+$','title' => 'Solo se permiten números','value' => set_value('telefono_consulta')]) ?>
+
                         <!-- Verifica si hay errores de validación para el campo -->
                             <?php if (isset($validation) && $validation->hasError('telefono_consulta')): ?>
                                 <div class="alert alert-danger m-auto">

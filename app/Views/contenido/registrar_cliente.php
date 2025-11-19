@@ -25,8 +25,8 @@
                 <!-- Campos del formulario -->
                     <div class="mb-3">
                         <label for="nombre_usuario" class="form-label">Nombre</label>
-                        <?php echo form_input(['name' => 'nombre_usuario', 'id' => 'nombre_usuario', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ej. Juan', 'value' => set_value('nombre_usuario')]); ?>
-                                
+                        <?php echo form_input(['name' => 'nombre_usuario', 'id' => 'nombre_usuario', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ej. Juan', 'value' => set_value('nombre_usuario'), 'pattern' => '^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$', 'title' => 'Solo se permiten letras y espacios']); ?>
+
                         <!-- Verifica si hay errores de validación para el campo -->
                         <?php if (isset($validation) && $validation->hasError('nombre_usuario')): ?>
                             <div class="alert alert-danger m-auto">
@@ -39,8 +39,8 @@
 
                     <div class="mb-3">
                         <label for="apellido_usuario" class="form-label">Apellido</label>
-                        <?php echo form_input(['name' => 'apellido_usuario', 'id' => 'apellido_usuario', 'type' => 'text', 'class' => 'form-control', 'placeholder' => 'Ej. Perez', 'value' => set_value('apellido_usuario')]); ?>
-                                    
+                        <?php echo form_input(['name' => 'apellido_usuario', 'id' => 'apellido_usuario', 'type' => 'text','class' => 'form-control', 'placeholder' => 'Ej. Perez', 'value' => set_value('apellido_usuario'), 'pattern' => '^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$', 'title' => 'Solo se permiten letras y espacios']); ?>
+                        
                         <!-- Verifica si hay errores de validación para el campo -->
                         <?php if (isset($validation) && $validation->hasError('apellido_usuario')): ?>
                             <div class="alert alert-danger m-auto">
