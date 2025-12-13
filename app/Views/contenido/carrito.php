@@ -73,14 +73,34 @@
                         <td colspan="2"><strong>$<?php echo $total; ?></strong></td>
                     </tr>
                     <tr>
-                        <td colspan="3"><a href="<?php echo base_url('vaciar'); ?>" class="btn btn-warning">Vaciar
-                                Carrito</a></td>
-                        <td colspan="3"><a href="<?php echo base_url('guardar_venta'); ?>"
-                                class="btn btn-success">Contunuar Compra</a></td>
+                        <td colspan="3">
+                            <a href="<?php echo base_url('vaciar'); ?>" class="btn btn-warning">Vaciar
+                                Carrito</a>
+                        </td>
+                        <td colspan="3">
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalConfirmarCompra"> Confirmar Compra</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <?php } ?>
     </div>
+
+    <?= view('contenido/modal_confirmar_compra') ?>
+
+    <script>
+        document.getElementById("metodo_entrega").addEventListener("change", function() {
+            const envioBox = document.getElementById("datos_envio");
+
+            if (this.value === "envio") {
+                envioBox.style.display = "block";
+                envioBox.querySelectorAll("input").forEach(e => e.required = true);
+            } else {
+                envioBox.style.display = "none";
+                envioBox.querySelectorAll("input").forEach(e => e.required = false);
+            }
+        });
+    </script>
+
 </div>

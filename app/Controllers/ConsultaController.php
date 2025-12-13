@@ -10,83 +10,72 @@ class ConsultaController extends BaseController
 
     public function consulta()
     {
-        $data['titulo']='Contacto';
-        return view('plantilla/encabezado', $data)
-        .view('plantilla/barra')
-        .view('contenido/contacto')
-        .view('plantilla/footer');
-    }
+        $session = session();
+        $usuario = null;
 
+        if ($session->has('id_usuario')) {
+            $userModel = new \App\Models\UserModel();
+            $usuario = $userModel->find($session->get('id_usuario'));
+        }
+
+        $data = [
+            'titulo' => 'Contacto',
+            'usuario' => $usuario,
+            'validation' => \Config\Services::validation()
+        ];
+
+        return view('plantilla/encabezado', $data)
+            . view('plantilla/barra')
+            . view('contenido/contacto', $data)
+            . view('plantilla/footer');
+    }
+    
     public function add_consulta()
     {
-        
-        $validation = \Config\Services::validation();
-        $request = \Config\Services::request();
+        $session = session();
+        $userModel = new \App\Models\UserModel();
 
-        // Reglas de validacion para los campos
-        $validation->setRules(
-            [
-                'texto_consulta'=>'required|max_length[150]',
-                'motivo_consulta' => 'required|max_length[80]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
-                'correo_consulta'=>'required|valid_email',
-                'telefono_consulta' => 'required|min_length[10]|max_length[20]|regex_match[/^[0-9]+$/]',
-
-            ],
-            [   // Errors
-                'correo_consulta'=>[
-                    'required'=>'El correo es obligatorio',
-                    'valid_email'=>'La dirección de correo debe ser válida',
-                ],
-                'telefono_consulta' => [
-                    'required'   => 'El teléfono es obligatorio',
-                    'min_length' => 'El teléfono debe tener como mínimo 10 caracteres',
-                    'max_length' => 'El teléfono debe tener como máximo 20 caracteres',
-                    'regex_match' => 'El teléfono solo puede contener números',
-                ],
-                'motivo_consulta'=>[
-                    'required'=>'El motivo es obligatorio',
-                    'min_length'=>'El motivo debe tener como mínimo 10 caracteres',
-                    'max_length'=>'El motivo debe tener como máximo 80 caracteres',
-                    'regex_match' => 'El motivo solo puede contener letras y espacios, no números ni símbolos',
-                ],
-                'texto_consulta'=>[
-                    'required'=>'El mensaje es obligatorio',
-                    'min_length'=>'El mensaje debe tener como mínimo 10 caracteres',
-                    'max_length'=>'El mensaje debe tener como máximo 150 caracteres',
-                ],
-            ]
-        );
-
-        // Guarda consulta en la bd
-        if($validation->withRequest($request)->run()){
-
-            // Obtiene datos del formulario
-            $data=[
-                'correo_consulta'=>$request->getPost('correo_consulta'),
-                'telefono_consulta'=>$request->getPost('telefono_consulta'),
-                'motivo_consulta'=>$request->getPost('motivo_consulta'),
-                'texto_consulta'=>$request->getPost('texto_consulta'),
-                'leido_consulta'=>0,
-            ];
-
-            // Inserta datos en la tabla de consultas
-            $userConsulta = new ConsultaModel();
-            $userConsulta->insert($data);
-
-            // Mensaje de éxito
-            return redirect()->to('contacto')->with('mensaje', 'Su consulta se envió exitosamente!');
-
+        // Obtener correo y teléfono del formulario o sesión
+        if ($session->has('correo_usuario')) {
+            // Usuario logueado
+            $correo   = $session->get('correo_usuario');
+            $telefono = $session->get('telefono_usuario');
         } else {
-            
-            $data['titulo']='Contacto';
-            $data['validation']=$validation->getErrors();
-
-            // Mensajes de error
-            return view('plantilla/encabezado', $data).
-            view('plantilla/barra').
-            view('contenido/contacto', ['validation' => $validation]).
-            view('plantilla/footer');
+            // Invitado
+            $correo   = $this->request->getPost('correo_consulta');
+            $telefono = $this->request->getPost('telefono_consulta');
         }
+
+        // Verificar si el correo existe en la tabla usuarios
+        $usuario = $userModel->where('correo_usuario', $correo)->first();
+
+        // Si existe, obtenemos su ID; si no, dejamos null
+        $idUsuario = $usuario ? $usuario['id_usuario'] : null;
+
+        // Validación
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'motivo_consulta' => 'required|max_length[100]|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
+            'texto_consulta'  => 'required|max_length[500]'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('validation', $validation);
+        }
+
+        // Insertar consulta
+        $consultaModel = new \App\Models\ConsultaModel();
+        $data = [
+            'correo_consulta'   => $correo,
+            'telefono_consulta' => $telefono,
+            'motivo_consulta'   => $this->request->getPost('motivo_consulta'),
+            'texto_consulta'    => $this->request->getPost('texto_consulta'),
+            'id_usuario'        => $idUsuario
+        ];
+
+        $consultaModel->insert($data);
+
+        return redirect()->back()->with('mensaje', 'Tu consulta fue enviada correctamente.');
     }
     
     public function gestionar_consultas()
@@ -108,19 +97,26 @@ class ConsultaController extends BaseController
         $consultaData = $consulta->find($id);
 
         if (!$consultaData) {
-            return redirect()->to('lista_consulta')->with('mensaje', 'Consulta no encontrada.');
+            return redirect()->to('lista_consulta')
+                ->with('mensaje', 'Consulta no encontrada.');
         }
 
-        // Si ya fue respondida, no se puede marcar como no leída
+        // Bloquear para consultas de usuarios NO registrados
+        if (!isset($consultaData['id_usuario']) || $consultaData['id_usuario'] === null) {
+            return redirect()->to('lista_consulta')
+                ->with('mensaje', 'No se puede modificar el estado: el remitente no está registrado.');
+        }
+
+        // Si ya fue respondida, no se puede cambiar estado
         if (!empty($consultaData['respuesta_consulta'])) {
-            return redirect()->to('lista_consulta')->with('mensaje', 'No se puede cambiar el estado: la consulta ya fue respondida.');
+            return redirect()->to('lista_consulta')
+                ->with('mensaje', 'No se puede cambiar el estado: la consulta ya fue respondida.');
         }
 
-        // Cambiar estado normalmente si no fue respondida
+        // Cambiar estado normalmente
         $estado = $consultaData['leido_consulta'] == 0 ? 1 : 0;
         $consulta->update($id, ['leido_consulta' => $estado]);
 
-        // Preparar el mensaje según el estado
         $mensaje = $estado == 1
             ? 'La consulta se marcó como leída correctamente.'
             : 'La consulta se marcó como no leída correctamente.';

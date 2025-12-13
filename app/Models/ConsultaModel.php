@@ -13,6 +13,7 @@ class ConsultaModel extends Model
         'telefono_consulta',
         'motivo_consulta',
         'texto_consulta',
+        'id_usuario',
         'leido_consulta',
         'respuesta_consulta'
     ];

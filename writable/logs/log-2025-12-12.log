@@ -1,0 +1,112 @@
+INFO - 2025-12-12 01:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 02:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 02:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 02:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 02:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 02:29:55 --> Cart Class Initialized
+CRITICAL - 2025-12-12 02:29:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "modals/modal_confirmar_compra.php"
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('modals/modal_confirmar_compra.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('modals/modal_confirmar_compra', [], true)
+ 3 APPPATH\Views\contenido\carrito.php(90): view('modals/modal_confirmar_compra')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\carrito.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/carrito', [], true)
+ 7 APPPATH\Controllers\CarritoController.php(26): view('contenido/carrito')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarritoController->carrito()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarritoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-12 02:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 02:30:19 --> Cart Class Initialized
+CRITICAL - 2025-12-12 02:30:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "modal_confirmar_compra.php"
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('modal_confirmar_compra.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('modal_confirmar_compra', [], true)
+ 3 APPPATH\Views\contenido\carrito.php(90): view('modal_confirmar_compra')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\carrito.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/carrito', [], true)
+ 7 APPPATH\Controllers\CarritoController.php(26): view('contenido/carrito')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarritoController->carrito()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarritoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-12 02:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 02:50:11 --> Cart Class Initialized
+CRITICAL - 2025-12-12 02:50:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "modal_confirmar_compra.php"
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('modal_confirmar_compra.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('modal_confirmar_compra', [], true)
+ 3 APPPATH\Views\contenido\carrito.php(90): view('modal_confirmar_compra')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\carrito.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/carrito', [], true)
+ 7 APPPATH\Controllers\CarritoController.php(26): view('contenido/carrito')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarritoController->carrito()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarritoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-12 03:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:15:55 --> Cart Class Initialized
+CRITICAL - 2025-12-12 03:15:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "modal_confirmar_compra.php"
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('modal_confirmar_compra.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('modal_confirmar_compra', [], true)
+ 3 APPPATH\Views\contenido\carrito.php(90): view('modal_confirmar_compra')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\carrito.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/carrito', [], true)
+ 7 APPPATH\Controllers\CarritoController.php(26): view('contenido/carrito')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarritoController->carrito()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarritoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-12 03:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:17:22 --> Cart Class Initialized
+CRITICAL - 2025-12-12 03:17:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "modal_confirmar_compra.php"
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('modal_confirmar_compra.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('modal_confirmar_compra', [], true)
+ 3 APPPATH\Views\contenido\carrito.php(90): view('modal_confirmar_compra')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\carrito.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/carrito', [], true)
+ 7 APPPATH\Controllers\CarritoController.php(26): view('contenido/carrito')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarritoController->carrito()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarritoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-12 03:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:21:53 --> Cart Class Initialized
+INFO - 2025-12-12 03:43:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:43:19 --> Cart Class Initialized
+INFO - 2025-12-12 03:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:43:27 --> Cart Class Initialized
+INFO - 2025-12-12 03:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:43:27 --> Cart Class Initialized
+INFO - 2025-12-12 03:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:43:30 --> Cart Class Initialized
+INFO - 2025-12-12 03:43:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:43:30 --> Cart Class Initialized
+INFO - 2025-12-12 03:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:45:07 --> Cart Class Initialized
+INFO - 2025-12-12 03:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-12 03:45:07 --> Cart Class Initialized

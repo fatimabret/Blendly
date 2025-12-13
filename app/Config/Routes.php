@@ -51,21 +51,21 @@ $routes->group('', ['filter' => 'registered'], function ($routes) {
     $routes->get('usuario/(:num)', 'UserController::usuario/$1');
     $routes->post('actualizar_usuario', 'UserController::actualizar_usuario');
 
+    // Consultas del cliente
+    $routes->get('mis_consultas', 'ConsultaController::mis_consultas');
+
     // Carrito
     $routes->get('carrito', 'CarritoController::carrito');
     $routes->post('add_carrito', 'CarritoController::add_carrito');
     $routes->get('quitar/(:any)', 'CarritoController::borrar/$1');
     $routes->get('vaciar', 'CarritoController::vaciar');
-    $routes->get('guardar_venta', 'CarritoController::guardar_venta');
     $routes->post('actualizar_cantidad', 'CarritoController::actualizarCantidad');
-
-    // Consultas del cliente
-    $routes->get('mis_consultas', 'ConsultaController::mis_consultas');
 
     // Compras del cliente
     $routes->get('mi_compra', 'PedidoController::mi_compra');
     $routes->get('compras/(:num)', 'PedidoController::ver_compras/$1');
     $routes->get('detalle_compra/(:num)', 'PedidoController::ver_detalles/$1');
+    $routes->post('guardar_compra', 'PedidoController::guardar_compra');
 
     // Detalle de ventas
     $routes->get('ventas', 'PedidoController::listar_ventas');

@@ -50,33 +50,32 @@
                         <h5 class="m-3 text-center">Formulario de Contacto:</h5>
 
                         <!-- Campos del formulario -->
-                        <div class="mb-3">
-                            <label for="correo_consulta" class="form-label">Correo electrónico</label>
-                            <?php echo form_input(['name' => 'correo_consulta', 'id' => 'correo_consulta', 'type' => 'email', 'class' => 'form-control', 'placeholder' => 'name@example.com', 'value' => set_value('correo_consulta')]) ?>
-                            
-                            <!-- Verifica si hay errores de validación para el campo -->
-                            <?php if (isset($validation) && $validation->hasError('correo_consulta')): ?>
-                                <div class="alert alert-danger">
 
-                                    <!-- Muestra mensaje de error -->
-                                    <?= $validation->getError('correo_consulta'); ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+                        <!-- Si el usuario está logueado: ocultar correo y teléfono -->
+                        <?php if (isset($usuario) && $usuario != null): ?>
 
-                        <div class="mb-3">
-                            <label for="telefono_consulta" class="form-label">Número de teléfono</label>
-                            <?php echo form_input(['name' => 'telefono_consulta','id' => 'telefono_consulta','type' => 'text','class' => 'form-control','placeholder' => '+54 0800-800','pattern' => '^[0-9]+$','title' => 'Solo se permiten números','value' => set_value('telefono_consulta')]) ?>
+                            <input type="hidden" name="correo_consulta" value="<?= $usuario['correo_usuario'] ?>">
+                            <input type="hidden" name="telefono_consulta" value="<?= $usuario['telefono_usuario'] ?>">
 
-                        <!-- Verifica si hay errores de validación para el campo -->
-                            <?php if (isset($validation) && $validation->hasError('telefono_consulta')): ?>
-                                <div class="alert alert-danger m-auto">
+                            <div class="alert alert-info">
+                                Enviarás esta consulta como:  
+                                <strong><?= $usuario['nombre_usuario'] ?></strong>  
+                                (<?= $usuario['correo_usuario'] ?>)
+                            </div>
 
-                                <!-- Muestra cada mensaje de error -->
-                                    <?= $validation->getError('telefono_consulta'); ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+                        <?php else: ?>
+
+                            <div class="mb-3">
+                                <label for="correo_consulta" class="form-label">Correo electrónico</label>
+                                <input type="email" name="correo_consulta" class="form-control" placeholder="name@example.com" value="<?= set_value('correo_consulta') ?>">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="telefono_consulta" class="form-label">Número de teléfono</label>
+                                <input type="text" name="telefono_consulta" class="form-control" placeholder="+54 0800-800" pattern="[0-9]+" title="Solo se permiten números" value="<?= set_value('telefono_consulta') ?>">
+                            </div>
+
+                        <?php endif; ?>
                         
                         <div class="mb-3">
                             <label for="motivo_consulta" class="form-label">Motivo de la Consulta</label>

@@ -16,7 +16,8 @@ class UserModel extends Model
         'correo_usuario',
         'pass_usuario',
         'perfil_usuario',
-        'id_estado'
+        'id_estado',
+        'telefono_usuario'
     ];
 
     protected $returnType = 'array'; // retorno

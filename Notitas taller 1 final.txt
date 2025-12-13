@@ -1,8 +1,6 @@
-Cosita que faltan para el final de taller 1
+-- Cosita que faltan para el final de taller 1 --
 
 LA HAMBUEGUESA FUNCIONA CUANDO QUIERE
-
-Cuando visualizas las consultas que marque cuando son clientes registrados y le pueda marcar como leído y no leído, caso contrario solo se responda mandando un "correo"
 
 Cuando confirmas compra en el carrito te muestre un modal solicitando dni, dirección y teléfono del cliente con el detalle de compra y confirmamos ok
 
@@ -14,6 +12,8 @@ Imprimir factura:
 
 ----	TERMINADO	----
 
+- Cuando el cliente esta loggeado y quiera mandar una consulta se autocomplete el correo y teléfono
+- Cuando visualizas las consultas que marque cuando son clientes registrados y le pueda marcar como leído y no leído, caso contrario solo se responda mandando un "correo"
 - El administrador no puede cambiar el tipo de perfil a los clientes (solo se puede dar de baja y alta)
 - Buscador en ventas por fechas
 - Buscador en gestor de productos y lista de productos

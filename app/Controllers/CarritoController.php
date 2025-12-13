@@ -70,65 +70,7 @@ class CarritoController extends BaseController
         return redirect()->route('carrito')->with('mensaje', '¡El producto se agregó exitosamente!');
     }
 
-    public function guardar_venta()
-    {
-        $cart = \Config\Services::cart();
-        $venta = new PedidoModel();
-        $detalle = new PedidoDetalleModel();
-        $productos = new ProductoModel();
-        $request = \Config\Services::request();
     
-        //instancia el carrito en variable aux
-        $cart1 = $cart->contents();
-
-        // Verifica el stock de los productos
-        foreach ($cart1 as $item)
-        {
-            //obtiene los datos del model
-            $producto = $productos->where('id_producto', $item['id'])->first();
-
-            if ($producto['stock_producto'] < $item['qty'] || $producto['stock_producto'] == 0)
-            {
-                return redirect()->route('carrito')->with('mensaje', '¡No hay Stock suficiente!');
-            }
-        }
-    
-        // Datos de la venta
-        $data = array(
-            'id_cliente' => session("id_usuario"),
-            'fecha_pedido' => date('Y-m-d')
-        );
-    
-        // Inserta la venta
-        $id_venta = $venta->insert($data);
-
-        // Detalles de la venta
-        foreach ($cart1 as $item) {
-            // Llamar a la función para actualizar el estado del producto si el stock es cero
-            $this->actualizarStockProducto($item['id'], $item['qty']);
-
-            $data = [
-                "stock_producto" => $producto["stock_producto"] - $item['qty']
-            ];
-
-            $pedido_detalle = array(
-                'id_pedido' => $id_venta,
-                'id_producto' => $item['id'],
-                'cantidad_pedido' => $item['qty'],
-                'precio_unitario' => $item['price']
-            );
-    
-            $productos->update($item['id'], $data);
-    
-            // Inserta el detalle de la venta
-            $detalle->insert($pedido_detalle);
-        }
-    
-        // Vacía el carrito
-        $cart->destroy();
-    
-        return redirect()->route('carrito')->with('mensaje', '¡Gracias por su compra!');
-    }
 
     public function actualizarStockProducto($id_producto, $cantidad_producto)
     {

@@ -30,18 +30,27 @@
                     <?php foreach($consulta as $row) { ?>
                         <tr>
                             <td><?php echo $row['id_consulta']; ?></td>
-                            <td><?php echo $row['correo_consulta']; ?></td>
+                            <td>
+                                <?= $row['correo_consulta']; ?>
+                                <?php if (!isset($row['id_usuario']) || $row['id_usuario'] === null): ?>
+                                    <br><span class="badge bg-danger">Usuario no registrado</span>
+                                <?php endif; ?>
+                            </td>
                             <td><?php echo $row['telefono_consulta']; ?></td>
                             <td><?php echo $row['motivo_consulta']; ?></td>
                             <td><?php echo $row['texto_consulta']; ?></td>
                             <td>
-                                <?php if (!empty($row['respuesta_consulta'])): ?>
-                                    <button class="btn btn-secondary" disabled>Leída</button>
+                                <?php if (!isset($row['id_usuario']) || $row['id_usuario'] === null): ?>
+                                    <button class="btn btn-secondary mt-2" disabled>No disponible</button>
                                 <?php else: ?>
-                                    <?php if ($row['leido_consulta'] == 0): ?>
-                                        <a class="btn btn-success" href="<?= base_url('consulta/leido/'.$row['id_consulta']); ?>">Marcar Leída</a>
+                                    <?php if (!empty($row['respuesta_consulta'])): ?>
+                                        <button class="btn btn-secondary" disabled>Leída</button>
                                     <?php else: ?>
-                                        <a class="btn btn-danger" href="<?= base_url('consulta/leido/'.$row['id_consulta']); ?>">Marcar No Leída</a>
+                                        <?php if ($row['leido_consulta'] == 0): ?>
+                                            <a class="btn btn-success" href="<?= base_url('consulta/leido/'.$row['id_consulta']); ?>">Marcar Leída</a>
+                                        <?php else: ?>
+                                            <a class="btn btn-danger" href="<?= base_url('consulta/leido/'.$row['id_consulta']); ?>">Marcar No Leída</a>
+                                        <?php endif; ?>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </td>
