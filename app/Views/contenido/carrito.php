@@ -78,7 +78,7 @@
                                 Carrito</a>
                         </td>
                         <td colspan="3">
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalConfirmarCompra"> Confirmar Compra</button>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalConfirmarCompra"> Continuar Compra</button>
                         </td>
                     </tr>
                 </tbody>
@@ -87,20 +87,73 @@
         <?php } ?>
     </div>
 
+    <!--  Cargamos los modales  -->
     <?= view('contenido/modal_confirmar_compra') ?>
+    <?= view('contenido/modal_resumen_compra') ?>
 
     <script>
-        document.getElementById("metodo_entrega").addEventListener("change", function() {
-            const envioBox = document.getElementById("datos_envio");
+        function mostrarResumen() {
 
-            if (this.value === "envio") {
-                envioBox.style.display = "block";
-                envioBox.querySelectorAll("input").forEach(e => e.required = true);
+            const f = document.querySelector('#modalConfirmarCompra form');
+
+            // SPANS resumen
+            const res_nombre   = document.getElementById('res_nombre');
+            const res_telefono = document.getElementById('res_telefono');
+            const res_dni      = document.getElementById('res_dni');
+            const res_entrega  = document.getElementById('res_entrega');
+
+            // INPUTS ocultos
+            const inp_nombre   = document.getElementById('inp_nombre');
+            const inp_telefono = document.getElementById('inp_telefono');
+            const inp_dni      = document.getElementById('inp_dni');
+            const inp_metodo   = document.getElementById('inp_metodo');
+
+            const inp_calle     = document.getElementById('inp_calle');
+            const inp_numero    = document.getElementById('inp_numero');
+            const inp_piso      = document.getElementById('inp_piso');
+            const inp_ciudad    = document.getElementById('inp_ciudad');
+            const inp_provincia = document.getElementById('inp_provincia');
+            const inp_cp        = document.getElementById('inp_cp');
+
+            // Cliente
+            res_nombre.textContent   = f.nombre.value;
+            res_telefono.textContent = f.telefono.value;
+            res_dni.textContent      = f.dni.value;
+
+            inp_nombre.value   = f.nombre.value;
+            inp_telefono.value = f.telefono.value;
+            inp_dni.value      = f.dni.value;
+            inp_metodo.value   = f.metodo.value;
+
+            // Entrega
+            if (f.metodo.value === 'envio') {
+
+                res_entrega.innerHTML =
+                    `<strong>Envío a domicilio</strong><br>
+                    ${f.calle.value} ${f.numero.value}, 
+                    ${f.ciudad.value}, ${f.provincia.value} (${f.cp.value})`;
+
+                inp_calle.value     = f.calle.value;
+                inp_numero.value    = f.numero.value;
+                inp_piso.value      = f.piso.value;
+                inp_ciudad.value    = f.ciudad.value;
+                inp_provincia.value = f.provincia.value;
+                inp_cp.value        = f.cp.value;
+
             } else {
-                envioBox.style.display = "none";
-                envioBox.querySelectorAll("input").forEach(e => e.required = false);
+                res_entrega.textContent = 'Retiro en sucursal';
             }
-        });
+
+            // Cerrar modal 1
+            bootstrap.Modal.getInstance(
+                document.getElementById('modalConfirmarCompra')
+            ).hide();
+
+            // Abrir modal 2
+            new bootstrap.Modal(
+                document.getElementById('modalResumenCompra')
+            ).show();
+        }
     </script>
 
 </div>

@@ -71,92 +71,107 @@ class PedidoController extends BaseController
     public function guardar_compra()
     {
         $cart = \Config\Services::cart();
-        $pedidoModel = new \App\Models\PedidoModel();
-        $detalleModel = new \App\Models\PedidoDetalleModel();
+        $db = \Config\Database::connect();
+
+        $pedidoModel   = new \App\Models\PedidoModel();
+        $detalleModel  = new \App\Models\PedidoDetalleModel();
         $productoModel = new \App\Models\ProductoModel();
-        $direccionModel = new \App\Models\DireccionPedidoModel(); // Crearás este model
+        $direccionModel = new \App\Models\DireccionPedidoModel();
 
         $request = service('request');
 
-        // Validación backend
+        // VALIDACIONES
         $rules = [
             'nombre'   => 'required|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
             'telefono' => 'required|numeric|min_length[6]|max_length[15]',
             'dni'      => 'required|numeric|min_length[7]|max_length[11]',
-            'metodo'   => 'required',
+            'metodo'   => 'required|in_list[retiro,envio]',
 
-            // Envío
-            'calle'    => 'permit_empty|regex_match[/^[A-Za-z0-9ÁÉÍÓÚáéíóúÑñ\s]+$/]',
-            'numero'   => 'permit_empty|numeric',
-            'piso'     => 'permit_empty|alpha_numeric',
-            'ciudad'   => 'permit_empty|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
-            'provincia'=> 'permit_empty|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
-            'cp'       => 'permit_empty|numeric'
+            'calle'     => 'permit_empty|max_length[150]',
+            'numero'    => 'permit_empty|numeric|max_length[10]',
+            'piso'      => 'permit_empty|max_length[20]',
+            'ciudad'    => 'permit_empty|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
+            'provincia' => 'permit_empty|regex_match[/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/]',
+            'cp'        => 'permit_empty|numeric|min_length[3]|max_length[8]'
         ];
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('mensaje', 'Revisá los datos ingresados.');
         }
 
-        $metodo = $request->getPost('metodo');
+        if (empty($cart->contents())) {
+            return redirect()->to('carrito')->with('mensaje', 'El carrito está vacío.');
+        }
 
-        // Verificar stock
-        foreach ($cart->contents() as $item) {
-            $prod = $productoModel->find($item['id']);
-            if ($prod['stock_producto'] < $item['qty']) {
-                return redirect()->back()->with('mensaje', 'Stock insuficiente para: ' . $prod['nombre_producto']);
+        // INICIAR TRANSACCIÓN
+        $db->transBegin();
+
+        try {
+
+            // VERIFICAR STOCK
+            foreach ($cart->contents() as $item) {
+                $producto = $productoModel->find($item['id']);
+
+                if (!$producto || $producto['stock_producto'] < $item['qty']) {
+                    throw new \Exception('Stock insuficiente para ' . $item['name']);
+                }
             }
-        }
 
-        // Registrar pedido
-        $dataPedido = [
-            'id_cliente'   => session('id_usuario'),
-            'nombre'       => $request->getPost('nombre'),
-            'telefono'     => $request->getPost('telefono'),
-            'dni'          => $request->getPost('dni'),
-            'metodo'       => $metodo,
-            'notas'        => $request->getPost('notas'),
-            'fecha_pedido' => date('Y-m-d')
-        ];
-
-        $idPedido = $pedidoModel->insert($dataPedido);
-
-        // Si es envío, registrar dirección
-        if ($metodo === 'envio') {
-
-            $direccionModel->insert([
-                'id_pedido' => $idPedido,
-                'calle'     => $request->getPost('calle'),
-                'numero'    => $request->getPost('numero'),
-                'piso'      => $request->getPost('piso'),
-                'ciudad'    => $request->getPost('ciudad'),
-                'provincia' => $request->getPost('provincia'),
-                'cp'        => $request->getPost('cp')
-            ]);
-        }
-
-        // Registrar detalles y actualizar stock
-        foreach ($cart->contents() as $item) {
-
-            // Insertar detalle
-            $detalleModel->insert([
-                'id_pedido'       => $idPedido,
-                'id_producto'     => $item['id'],
-                'cantidad_pedido' => $item['qty'],
-                'precio_unitario' => $item['price']
+            // CREAR PEDIDO
+            $idPedido = $pedidoModel->insert([
+                'id_cliente'   => session('id_usuario'),
+                'nombre'       => $request->getPost('nombre'),
+                'telefono'     => $request->getPost('telefono'),
+                'dni'          => $request->getPost('dni'),
+                'metodo'       => $request->getPost('metodo'),
+                'metodo_pago'  => $request->getPost('metodo_pago'),
+                'notas'        => $request->getPost('notas'),
+                'fecha_pedido' => date('Y-m-d')
             ]);
 
-            // Descontar stock
-            $productoModel->update($item['id'], [
-                'stock_producto' => $productoModel->find($item['id'])['stock_producto'] - $item['qty']
-            ]);
+            // DIRECCIÓN (solo envío)
+            if ($request->getPost('metodo') === 'envio') {
+                $direccionModel->insert([
+                    'id_pedido' => $idPedido,
+                    'calle'     => $request->getPost('calle'),
+                    'numero'    => $request->getPost('numero'),
+                    'piso' => $request->getPost('piso'),
+                    'ciudad'    => $request->getPost('ciudad'),
+                    'provincia' => $request->getPost('provincia'),
+                    'cp'        => $request->getPost('cp')
+                ]);
+            }
+
+            // DETALLES + STOCK
+            foreach ($cart->contents() as $item) {
+
+                $producto = $productoModel->find($item['id']);
+                $nuevoStock = $producto['stock_producto'] - $item['qty'];
+
+                $detalleModel->insert([
+                    'id_pedido'       => $idPedido,
+                    'id_producto'     => $item['id'],
+                    'cantidad_pedido' => $item['qty'],
+                    'precio_unitario' => $item['price']
+                ]);
+
+                $productoModel->update($item['id'], [
+                    'stock_producto' => $nuevoStock
+                ]);
+            }
+
+            $db->transCommit();
+            $cart->destroy();
+
+            return redirect()->to('carrito')->with('mensaje', 'Compra realizada con éxito.');
+
+        } catch (\Exception $e) {
+
+            $db->transRollback();
+            return redirect()->back()->with('mensaje', $e->getMessage());
         }
-
-        // Vaciar carrito
-        $cart->destroy();
-
-        return redirect()->to('carrito')->with('mensaje', 'Compra realizada con éxito.');
     }
+
 
 
 

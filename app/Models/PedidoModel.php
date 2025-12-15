@@ -10,7 +10,8 @@ class PedidoModel extends Model
     protected $allowedFields = [
         // campo permitidos
         'fecha_pedido',
-        'id_cliente'
+        'id_cliente',
+        'metodo_pago'
     ];
 
     protected $returnType = 'array'; // retorno

@@ -18,7 +18,6 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Edad</th>
                         <th>Correo</th>
                         <th>Estado</th>
                 </thead>
@@ -29,7 +28,6 @@
                             <tr class="custom-row">
                                 <td><?php echo $row['nombre_usuario']; ?></td>
                                 <td><?php echo $row['apellido_usuario']; ?></td>
-                                <td><?php echo $row['edad_usuario']; ?></td>
                                 <td><?php echo $row['correo_usuario']; ?></td>
                                 <td>
                                     <?php if ($row['id_estado'] == 1): ?>

@@ -18,13 +18,25 @@ class CarritoController extends BaseController
     public function carrito()
     {
         $cart = \Config\Services::cart();
-        $data['titulo'] = 'Carrito de compras';
-        $data['productos'] = $cart->contents();
+        $session = session();
+
+        $usuario = null;
+
+        if ($session->has('id_usuario')) {
+            $userModel = new \App\Models\UserModel();
+            $usuario = $userModel->find($session->get('id_usuario'));
+        }
+
+        $data = [
+            'titulo' => 'Carrito de compras',
+            'productos' => $cart->contents(),
+            'usuario' => $usuario
+        ];
 
         return view('plantilla/encabezado', $data)
-        .view('plantilla/barra')
-        .view('contenido/carrito')
-        .view('plantilla/footer');
+            . view('plantilla/barra')
+            . view('contenido/carrito', $data)
+            . view('plantilla/footer');
     }
 
     public function add_carrito()
