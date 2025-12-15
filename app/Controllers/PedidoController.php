@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\PedidoModel;
 use App\Models\PedidoDetalleModel;
 use App\Models\ProductoModel;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class PedidoController extends BaseController
 {
@@ -70,6 +72,7 @@ class PedidoController extends BaseController
 
     public function guardar_compra()
     {
+        $generarPDF = $this->request->getPost('generar_pdf') == '1';
         $cart = \Config\Services::cart();
         $db = \Config\Database::connect();
 
@@ -120,14 +123,15 @@ class PedidoController extends BaseController
             // CREAR PEDIDO
             $idPedido = $pedidoModel->insert([
                 'id_cliente'   => session('id_usuario'),
-                'nombre'       => $request->getPost('nombre'),
-                'telefono'     => $request->getPost('telefono'),
-                'dni'          => $request->getPost('dni'),
+                'nombre_cliente'       => $request->getPost('nombre'),
+                'telefono_cliente'     => $request->getPost('telefono'),
+                'dni_cliente'          => $request->getPost('dni'),
                 'metodo'       => $request->getPost('metodo'),
                 'metodo_pago'  => $request->getPost('metodo_pago'),
                 'notas'        => $request->getPost('notas'),
-                'fecha_pedido' => date('Y-m-d')
+                'fecha_pedido' => date('Y-m-d H:i:s')
             ]);
+
 
             // DIRECCIÓN (solo envío)
             if ($request->getPost('metodo') === 'envio') {
@@ -161,8 +165,15 @@ class PedidoController extends BaseController
             }
 
             $db->transCommit();
+            // Vaciar carrito
             $cart->destroy();
 
+            // Generar PDF
+            if ($generarPDF) {
+                return redirect()->to(base_url('pedido/pdf/' . $idPedido));
+            }
+
+            // NO quiere PDF
             return redirect()->to('carrito')->with('mensaje', 'Compra realizada con éxito.');
 
         } catch (\Exception $e) {
@@ -262,4 +273,45 @@ class PedidoController extends BaseController
             .view('administrador/ventas', $data)
             .view('plantilla/footer');
     }
+
+    public function generarPDF($idPedido)
+    {
+        $pedidoModel  = new PedidoModel();
+        $detalleModel = new PedidoDetalleModel();
+
+        $pedido   = $pedidoModel->find($idPedido);
+
+        $detalles = $detalleModel
+            ->select('producto.nombre_producto AS producto,
+                    pedido_detalle.cantidad_pedido AS cantidad,
+                    pedido_detalle.precio_unitario AS precio',)
+            ->join('producto', 'producto.id_producto = pedido_detalle.id_producto')
+            ->where('pedido_detalle.id_pedido', $idPedido)
+            ->findAll();
+
+        $total = 0;
+
+        foreach ($detalles as $d) {
+            $total += $d['cantidad'] * $d['precio'];
+        }
+
+        $html = view('contenido/comprobante_pdf', [
+            'pedido'   => $pedido,
+            'detalles' => $detalles,
+            'total'    => $total
+        ]);
+
+        $options = new Options();
+        $options->set('isRemoteEnabled', true);
+
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        return $this->response
+            ->setContentType('application/pdf')
+            ->setBody($dompdf->output());
+    }
+
 }

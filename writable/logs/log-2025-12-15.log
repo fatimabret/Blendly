@@ -72,3 +72,489 @@ INFO - 2025-12-15 19:41:00 --> Cart Class Initialized
 INFO - 2025-12-15 19:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-12-15 19:41:00 --> Cart Class Initialized
 INFO - 2025-12-15 19:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 20:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 20:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 20:53:59 --> Cart Class Initialized
+INFO - 2025-12-15 20:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 20:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 20:54:07 --> Cart Class Initialized
+INFO - 2025-12-15 20:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 20:54:07 --> Cart Class Initialized
+INFO - 2025-12-15 20:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 20:54:28 --> Cart Class Initialized
+INFO - 2025-12-15 20:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 20:54:28 --> Error: Class "App\Controllers\DetallePedidoModel" not found
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Controllers\PedidoController.php on line 279.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 21:00:54 --> Error: Class "App\Controllers\DetallePedidoModel" not found
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Controllers\PedidoController.php on line 279.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 21:00:56 --> Error: Class "App\Controllers\DetallePedidoModel" not found
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Controllers\PedidoController.php on line 279.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 21:01:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "comprobantes/comprobante_pdf.php"
+[Method: GET, Route: pedido/pdf/46]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('comprobantes/comprobante_pdf.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('comprobantes/comprobante_pdf', [], true)
+ 3 APPPATH\Controllers\PedidoController.php(284): view('comprobantes/comprobante_pdf', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 21:06:31 --> ErrorException: Undefined array key "nombre"
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 36.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(284): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 21:25:31 --> ErrorException: Undefined array key "nombre"
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 36.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(284): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:44:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 21:44:49 --> ErrorException: Undefined array key "producto"
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 54.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "producto"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 54)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(285): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-15 21:57:01 --> mysqli_sql_exception: Table 'bd_bret_fati.productos' doesn't exist in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-15 21:57:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_bret_fati.productos' doesn't exist
+[Method: GET, Route: pedido/pdf/46]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 21:57:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'bd_bret_fati.productos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 21:57:01 --> [Caused by] mysqli_sql_exception: Table 'bd_bret_fati.productos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `productos` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-15 21:57:35 --> mysqli_sql_exception: Unknown column 'producto.nombre' in 'field list' in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-15 21:57:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'producto.nombre' in 'field list'
+[Method: GET, Route: pedido/pdf/46]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 21:57:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'producto.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 21:57:35 --> [Caused by] mysqli_sql_exception: Unknown column 'producto.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `producto`.`nombre` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-15 21:58:03 --> mysqli_sql_exception: Unknown column 'productos.id_producto' in 'on clause' in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-15 21:58:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'productos.id_producto' in 'on clause'
+[Method: GET, Route: pedido/pdf/46]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 21:58:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'productos.id_producto' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 21:58:03 --> [Caused by] mysqli_sql_exception: Unknown column 'productos.id_producto' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'46\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `producto`.`nombre_producto` AS `producto`, `pedido_detalle`.`cantidad_pedido` AS `cantidad`, `pedido_detalle`.`precio_unitario` AS `precio`
+FROM `pedido_detalle`
+JOIN `producto` ON `productos`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\PedidoController.php(288): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 21:58:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 21:58:20 --> ErrorException: Undefined array key "total"
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 63.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 63)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(290): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 22:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 22:02:51 --> ErrorException: Undefined array key "cantidad_pedido"
+[Method: GET, Route: pedido/pdf/46]
+in APPPATH\Controllers\PedidoController.php on line 293.
+ 1 APPPATH\Controllers\PedidoController.php(293): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cantidad_pedido"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Controllers\\PedidoController.php', 293)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('46')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 22:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:03:58 --> Cart Class Initialized
+INFO - 2025-12-15 22:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:04:10 --> Cart Class Initialized
+INFO - 2025-12-15 22:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:04:10 --> Cart Class Initialized
+INFO - 2025-12-15 22:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:04:27 --> Cart Class Initialized
+INFO - 2025-12-15 22:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:16:38 --> Cart Class Initialized
+INFO - 2025-12-15 22:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:16:44 --> Cart Class Initialized
+INFO - 2025-12-15 22:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:16:44 --> Cart Class Initialized
+INFO - 2025-12-15 22:16:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-15 22:16:57 --> ErrorException: Trait "App\Controllers\App\Models\PedidoModel" not found
+[Method: POST, Route: guardar_compra]
+in APPPATH\Controllers\PedidoController.php on line 11.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-12-15 22:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-15 22:18:13 --> Cart Class Initialized
+INFO - 2025-12-15 22:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-15 22:18:13 --> mysqli_sql_exception: Unknown column 'producto.nombre' in 'field list' in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `pedido_...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\PedidoController.php(293): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('48')
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-15 22:18:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'producto.nombre' in 'field list'
+[Method: GET, Route: pedido/pdf/48]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\PedidoController.php(293): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('48')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 22:18:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'producto.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'48\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'48\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\PedidoController.php(293): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('48')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-15 22:18:13 --> [Caused by] mysqli_sql_exception: Unknown column 'producto.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'48\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'48\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = \'48\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `pedido_detalle`.`cantidad_pedido`, `pedido_detalle`.`precio_unitario`, `producto`.`nombre` AS `producto`
+FROM `pedido_detalle`
+JOIN `producto` ON `producto`.`id_producto` = `pedido_detalle`.`id_producto`
+WHERE `pedido_detalle`.`id_pedido` = :pedido_detalle.id_pedido:', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\PedidoController.php(293): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('48')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-15 22:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

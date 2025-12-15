@@ -70,6 +70,8 @@ $routes->group('', ['filter' => 'registered'], function ($routes) {
     // Detalle de ventas
     $routes->get('ventas', 'PedidoController::listar_ventas');
     $routes->get('detalle_ventas/(:num)', 'PedidoController::listar_detalle_ventas/$1');
+
+    $routes->get('pedido/pdf/(:num)', 'PedidoController::generarPDF/$1');
 });
 
 

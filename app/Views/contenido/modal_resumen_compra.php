@@ -82,9 +82,9 @@
                         <option value="mercadopago">Mercado Pago</option>
                     </select>
 
-                    <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" name="generar_pdf" value="1" id="chkPdf">
-                        <label class="form-check-label" for="chkPdf">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="generar_pdf" value="1" id="generar_pdf" checked>
+                        <label class="form-check-label" for="generar_pdf">
                             Generar comprobante en PDF
                         </label>
                     </div>
