@@ -2,14 +2,19 @@
 
 LA HAMBUEGUESA FUNCIONA CUANDO QUIERE
 
-Imprimir factura:
-- un model con los detalles
-- imprima ese model con los datos del cliente y detalles de la compra
-- método de pago
-
+- el comprobante te mande a otra ventana
+- botón de ver comprobante en compras
+- agregar el tipo de envió o medio de pago a comprobante (uno de los dos faltaba)
 
 ----	TERMINADO	----
 
+Imprimir factura:
+- Imprima un modal con los datos del cliente, detalles de la compra y método de pago
+
+
+
+- modal que la compra fue exitosa y te mande a productos, no a carrito
+- Recargar botón lista de ventas, productos
 - Cuando confirmas compra en el carrito te muestre un modal solicitando dni, dirección y teléfono del cliente con el detalle de compra y confirmamos ok
 - Cuando el cliente esta loggeado y quiera mandar una consulta se autocomplete el correo y teléfono
 - Cuando visualizas las consultas que marque cuando son clientes registrados y le pueda marcar como leído y no leído, caso contrario solo se responda mandando un "correo"

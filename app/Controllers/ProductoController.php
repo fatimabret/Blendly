@@ -405,20 +405,7 @@ class ProductoController extends BaseController
     public function buscar_gestion()
     {
         $q = $this->request->getGet('q');
-        $precio_min = $this->request->getGet('precio_min');
-        $precio_max = $this->request->getGet('precio_max');
-        $stock_min = $this->request->getGet('stock_min');
-        $stock_max = $this->request->getGet('stock_max');
         $estado = $this->request->getGet('estado');
-
-        // Validar que precio y stock no sean negativos
-        if ($precio_min < 0 || $precio_max < 0) {
-            return redirect()->back()->with('mensaje', 'El precio no puede ser negativo.');
-        }
-
-        if ($stock_min < 0 || $stock_max < 0) {
-            return redirect()->back()->with('mensaje', 'El stock no puede ser negativo.');
-        }
 
         // Validar que el nombre (q) NO tenga números
         if (!empty($q) && preg_match('/[0-9]/', $q)) {
@@ -438,22 +425,6 @@ class ProductoController extends BaseController
                     ->orLike('categoria.nombre_categoria', $q)
                     ->orLike('proveedor.nombre_proveedor', $q)
                     ->groupEnd();
-        }
-
-        // Precio 
-        if ($precio_min !== null && $precio_min !== "") {
-            $producto->where('producto.precio_producto >=', $precio_min);
-        }
-        if ($precio_max !== null && $precio_max !== "") {
-            $producto->where('producto.precio_producto <=', $precio_max);
-        }
-
-        // Stock 
-        if ($stock_min !== null && $stock_min !== "") {
-            $producto->where('producto.stock_producto >=', $stock_min);
-        }
-        if ($stock_max !== null && $stock_max !== "") {
-            $producto->where('producto.stock_producto <=', $stock_max);
         }
 
         // Estado (1 activo, 0 baja)

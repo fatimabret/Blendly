@@ -178,3 +178,41 @@
          <?php endif; ?>
       </div>
    </div>
+
+   <div class="modal fade" id="modalCompraExitosa" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+
+               <div class="modal-header bg-success text-white">
+                  <h5 class="modal-title text_ dark">Compra confirmada</h5>
+               </div>
+
+               <div class="modal-body text-center">
+                  <p class="text-dark">
+                     ¡Gracias por tu compra!  
+                     Tu pedido fue registrado correctamente.
+                  </p>
+               </div>
+            <div class="modal-footer justify-content-center">
+               <a href="<?= base_url('principal') ?>" class="btn btn-success">Ir ahora</a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <?php if (session()->getFlashdata('compra_exitosa')): ?>
+      <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            const modal = new bootstrap.Modal(
+                  document.getElementById('modalCompraExitosa')
+            );
+            modal.show();
+
+            // Redirección automática luego de 3 segundos
+            setTimeout(() => {
+                  window.location.href = "<?= base_url('principal') ?>";
+            }, 3000);
+         });
+      </script>
+   <?php endif; ?>
+

@@ -174,7 +174,9 @@ class PedidoController extends BaseController
             }
 
             // NO quiere PDF
-            return redirect()->to('carrito')->with('mensaje', 'Compra realizada con éxito.');
+            return redirect()->to('principal')
+                            ->with('compra_exitosa', true)
+                            ->with('mensaje', 'Compra realizada con éxito.');
 
         } catch (\Exception $e) {
 

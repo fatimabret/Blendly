@@ -17,20 +17,14 @@
                     action="<?= base_url('buscar_gestion') ?>" method="get"
                     style="max-width: 900px; margin: auto;">
 
-                    <div class="col-md-3">
-                        <input type="number" step="0.01" name="precio_min" class="form-control" placeholder="Precio min">
-                    </div>
-
-                    <div class="col-md-3">
-                        <input type="number" step="0.01" name="precio_max" class="form-control" placeholder="Precio max">
-                    </div>
-
-                    <div class="col-md-3">
-                        <input type="number" name="stock_min" class="form-control" placeholder="Stock min">
-                    </div>
-
-                    <div class="col-md-3">
-                        <input type="number" name="stock_max" class="form-control" placeholder="Stock max">
+                    <div class="col-md-1 text-center">
+                        <a href="<?= base_url('gestionar_prod') ?>" title="Actualizar ventas">
+                            <img 
+                                src="<?= base_url('assets/img/icons/recarga.png') ?>" 
+                                alt="Recargar"
+                                style="width:32px; cursor:pointer;"
+                            >
+                        </a>
                     </div>
 
                     <div class="col-md-6">
@@ -40,7 +34,7 @@
                             title="Solo letras, no se permiten números">
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <select name="estado" class="form-select">
                             <option value="">Todos</option>
                             <option value="1">Activos</option>

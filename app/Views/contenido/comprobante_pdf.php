@@ -32,6 +32,15 @@
 
 <h2>Comprobante de Compra</h2>
 
+<!-- DATOS DE LA TIENDA -->
+<div class="alert alert-light border">
+<strong>Blendly Bebidas</strong><br>
+Email: blendly.drinks@example.com<br>
+Dirección: 9 de Julio 1449, Corrientes Capital, Argentina
+</div>
+
+<hr>
+
 <p>
 <strong>Cliente:</strong> <?= esc($pedido['nombre_cliente']) ?><br>
 <strong>DNI:</strong> <?= esc($pedido['dni_cliente']) ?><br>

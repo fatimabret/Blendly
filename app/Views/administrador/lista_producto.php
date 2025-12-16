@@ -13,6 +13,15 @@
         <nav class="navba1r m-0">
             <div class="container-fluid mt-3 mb-3 w-50">
                 <form class="d-flex" action="<?= base_url('buscar_producto_admin') ?>" method="get">
+                    <div class="col-md-1 text-center">
+                        <a href="<?= base_url('lista_producto') ?>" title="Actualizar ventas">
+                            <img 
+                                src="<?= base_url('assets/img/icons/recarga.png') ?>" 
+                                alt="Recargar"
+                                style="width:32px; cursor:pointer;"
+                            >
+                        </a>
+                    </div>
                     <input class="form-control me-2" type="search" name="q" placeholder="Nombre del producto o categoria" aria-label="Buscar">
                     <button type="submit" style="background: #1b243a;" class="btn btn-primary border -0">Buscar</button>
                 </form>
