@@ -61,7 +61,7 @@
             <?php foreach ($vendidosProductos as $producto) : ?>
                <div class="col">
 
-                  <a href="<?= base_url('categorias/mas_vendidos') ?>" class="text-titulo">
+                  <a href="<?= base_url('categorias/mas_vendidos') ?>" class="text-titulo text-dark">
                      <div class="prod card border border-5 mt-5">
                         <img src="<?= base_url('assets/img/producto/' . $producto['imagen_producto']) ?>" class="card-img-top" alt="<?= $producto['nombre_producto'] ?>">
 
@@ -126,7 +126,7 @@
             <?php foreach ($ultimosProductos as $producto) : ?>
                <div class="col">
 
-               <a href="<?= base_url('categorias/orden/fecha/desc') ?>" class="text-titulo">
+               <a href="<?= base_url('categorias/orden/fecha/desc') ?>" class="text-titulo text-dark">
                      <div class="prod card border border-5 mt-5">
                         <img src="<?= base_url('assets/img/producto/' . $producto['imagen_producto']) ?>" class="card-img-top" alt="<?= $producto['nombre_producto'] ?>">
 
@@ -189,13 +189,23 @@
 
                <div class="modal-body text-center">
                   <p class="text-dark">
-                     ¡Gracias por tu compra!  
+                     ¡Gracias por tu compra!<br>
                      Tu pedido fue registrado correctamente.
                   </p>
+
+                  <?php if (session()->getFlashdata('generar_pdf')): ?>
+                     <a
+                        href="<?= base_url('pedido/pdf/' . session()->getFlashdata('id_pedido')) ?>"
+                        target="_blank"
+                        class="btn btn-outline-success mt-2"
+                     >
+                        Descargar comprobante (PDF)
+                     </a>
+                  <?php endif; ?>
                </div>
-            <div class="modal-footer justify-content-center">
-               <a href="<?= base_url('principal') ?>" class="btn btn-success">Ir ahora</a>
-            </div>
+            <a href="<?= base_url('mi_compra') ?>" class="btn btn-outline-success">
+               Ver mis compras
+            </a>
          </div>
       </div>
    </div>
@@ -203,15 +213,18 @@
    <?php if (session()->getFlashdata('compra_exitosa')): ?>
       <script>
          document.addEventListener('DOMContentLoaded', function () {
+
+            <?php if (session()->getFlashdata('generar_pdf')): ?>
+                  window.open(
+                     "<?= base_url('pedido/pdf/' . session()->getFlashdata('id_pedido')) ?>",
+                     "_blank"
+                  );
+            <?php endif; ?>
+
             const modal = new bootstrap.Modal(
                   document.getElementById('modalCompraExitosa')
             );
             modal.show();
-
-            // Redirección automática luego de 3 segundos
-            setTimeout(() => {
-                  window.location.href = "<?= base_url('principal') ?>";
-            }, 3000);
          });
       </script>
    <?php endif; ?>

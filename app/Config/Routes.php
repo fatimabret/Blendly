@@ -72,6 +72,8 @@ $routes->group('', ['filter' => 'registered'], function ($routes) {
     $routes->get('detalle_ventas/(:num)', 'PedidoController::listar_detalle_ventas/$1');
 
     $routes->get('pedido/pdf/(:num)', 'PedidoController::generarPDF/$1');
+    $routes->get('ver_comprobante/(:num)', 'PedidoController::verComprobante/$1');
+
 });
 
 

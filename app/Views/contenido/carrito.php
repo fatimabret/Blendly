@@ -89,7 +89,6 @@
 
     <!--  Cargamos los modales  -->
     <?= view('contenido/modal_confirmar_compra') ?>
-    <?= view('contenido/modal_resumen_compra') ?>
 
     <script>
         function mostrarResumen() {
@@ -148,11 +147,6 @@
             bootstrap.Modal.getInstance(
                 document.getElementById('modalConfirmarCompra')
             ).hide();
-
-            // Abrir modal 2
-            new bootstrap.Modal(
-                document.getElementById('modalResumenCompra')
-            ).show();
         }
     </script>
 

@@ -7,7 +7,7 @@
         <div class="col col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
             <div class="table-responsive">
                 <?php if (!empty($compras)): ?>
-                    <table id="mytable" class="table table-bordered table-striped table-hover ">
+                    <table id="mytable" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
                                 <th>Pedido</th>
@@ -25,7 +25,10 @@
                                     <td><?php echo $row['id_pedido']; ?></td>
                                     <td><?php echo $row['fecha_pedido']; ?></td>
                                     <td>$<?php echo number_format($row['total_venta'], 2); ?></td>
-                                    <td><a href="<?php echo base_url('detalle_compra/' . $row['id_pedido']); ?>" class="boton bt bnt m-auto p-2">Ver Detalle</a></td>
+                                    <td class="text-center">
+                                        <a href="<?= base_url('detalle_compra/' . $row['id_pedido']); ?>" class="btn btn-primary btn-sm mb-1">Ver detalle</a>
+                                        <a href="<?= base_url('ver_comprobante/' . $row['id_pedido']); ?>" class="btn btn-success btn-sm" target="_blank">Ver comprobante</a>
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tbody>

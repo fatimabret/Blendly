@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\PedidoModel;
 use App\Models\PedidoDetalleModel;
 use App\Models\ProductoModel;
+use App\Models\DireccionPedidoModel;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
@@ -98,12 +99,17 @@ class PedidoController extends BaseController
             'cp'        => 'permit_empty|numeric|min_length[3]|max_length[8]'
         ];
 
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('mensaje', 'Revisá los datos ingresados.');
+        if ($this->request->getPost('metodo') === 'envio') {
+            $rules['calle']     = 'required|max_length[150]';
+            $rules['numero']    = 'required|numeric|max_length[10]';
+            $rules['ciudad']    = 'required';
+            $rules['provincia'] = 'required';
+            $rules['cp']        = 'required|numeric|min_length[3]|max_length[8]';
         }
 
         if (empty($cart->contents())) {
-            return redirect()->to('carrito')->with('mensaje', 'El carrito está vacío.');
+            return redirect()->to('carrito')
+                ->with('mensaje', 'El carrito está vacío.');
         }
 
         // INICIAR TRANSACCIÓN
@@ -168,22 +174,106 @@ class PedidoController extends BaseController
             // Vaciar carrito
             $cart->destroy();
 
-            // Generar PDF
-            if ($generarPDF) {
-                return redirect()->to(base_url('pedido/pdf/' . $idPedido));
-            }
+            session()->setFlashdata([
+                'compra_exitosa' => true,
+                'generar_pdf'    => $generarPDF,
+                'id_pedido'      => $idPedido
+            ]);
 
-            // NO quiere PDF
-            return redirect()->to('principal')
-                            ->with('compra_exitosa', true)
-                            ->with('mensaje', 'Compra realizada con éxito.');
+            return redirect()->to('principal');
 
         } catch (\Exception $e) {
-
             $db->transRollback();
-            return redirect()->back()->with('mensaje', $e->getMessage());
+            return redirect()->to('carrito')
+                ->with('mensaje', $e->getMessage());
         }
     }
+
+    public function generarPDF($idPedido)
+    {
+        $pedidoModel  = new PedidoModel();
+        $detalleModel = new PedidoDetalleModel();
+
+        $pedido   = $pedidoModel->find($idPedido);
+
+        $detalles = $detalleModel
+            ->select('producto.nombre_producto AS producto,
+                    pedido_detalle.cantidad_pedido AS cantidad,
+                    pedido_detalle.precio_unitario AS precio')
+            ->join('producto', 'producto.id_producto = pedido_detalle.id_producto')
+            ->where('pedido_detalle.id_pedido', $idPedido)
+            ->findAll();
+
+        $total = 0;
+
+        foreach ($detalles as $d) {
+            $total += $d['cantidad'] * $d['precio'];
+        }
+
+        $html = view('contenido/comprobante_pdf', [
+            'pedido'   => $pedido,
+            'detalles' => $detalles,
+            'total'    => $total
+        ]);
+
+        $options = new Options();
+        $options->set('isRemoteEnabled', true);
+
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        return $this->response
+            ->setContentType('application/pdf')
+            ->setBody($dompdf->output());
+    }
+
+    public function verComprobante($idPedido)
+    {
+        $pedidoModel = new PedidoModel();
+        $detalleModel = new PedidoDetalleModel();
+        $direccionModel = new DireccionPedidoModel();
+
+        $pedido = $pedidoModel->find($idPedido);
+
+        if (!$pedido) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        // Seguridad: verificar que el pedido sea del usuario logueado
+        if ($pedido['id_cliente'] != session()->get('id_usuario')) {
+            return redirect()->to(base_url('mi_compra'));
+        }
+
+        $detalles = $detalleModel
+            ->select('
+                producto.nombre_producto AS producto,
+                pedido_detalle.cantidad_pedido AS cantidad,
+                pedido_detalle.precio_unitario AS precio
+            ')
+            ->join('producto', 'producto.id_producto = pedido_detalle.id_producto')
+            ->where('pedido_detalle.id_pedido', $idPedido)
+            ->findAll();
+
+        // Dirección (puede NO existir)
+        $direccion = $direccionModel
+        ->where('id_pedido', $idPedido)
+        ->first();
+
+        $total = 0;
+
+        foreach ($detalles as $d) {
+            $total += $d['cantidad'] * $d['precio'];
+        }
+        return view('contenido/comprobante_pdf', [
+            'pedido'   => $pedido,
+            'detalles' => $detalles,
+            'direccion' => $direccion,
+            'total'    => $total
+        ]);
+    }
+
 
 
 
@@ -274,46 +364,6 @@ class PedidoController extends BaseController
             .view('plantilla/barra')
             .view('administrador/ventas', $data)
             .view('plantilla/footer');
-    }
-
-    public function generarPDF($idPedido)
-    {
-        $pedidoModel  = new PedidoModel();
-        $detalleModel = new PedidoDetalleModel();
-
-        $pedido   = $pedidoModel->find($idPedido);
-
-        $detalles = $detalleModel
-            ->select('producto.nombre_producto AS producto,
-                    pedido_detalle.cantidad_pedido AS cantidad,
-                    pedido_detalle.precio_unitario AS precio',)
-            ->join('producto', 'producto.id_producto = pedido_detalle.id_producto')
-            ->where('pedido_detalle.id_pedido', $idPedido)
-            ->findAll();
-
-        $total = 0;
-
-        foreach ($detalles as $d) {
-            $total += $d['cantidad'] * $d['precio'];
-        }
-
-        $html = view('contenido/comprobante_pdf', [
-            'pedido'   => $pedido,
-            'detalles' => $detalles,
-            'total'    => $total
-        ]);
-
-        $options = new Options();
-        $options->set('isRemoteEnabled', true);
-
-        $dompdf = new Dompdf($options);
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'portrait');
-        $dompdf->render();
-
-        return $this->response
-            ->setContentType('application/pdf')
-            ->setBody($dompdf->output());
     }
 
 }

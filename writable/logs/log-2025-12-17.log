@@ -1,0 +1,854 @@
+INFO - 2025-12-17 00:52:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 00:53:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 00:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 00:59:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 00:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 00:59:56 --> Error: Class "App\Controllers\DetallePedidoModel" not found
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Controllers\PedidoController.php on line 234.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:00:19 --> ErrorException: Undefined array key "id_usuario"
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Controllers\PedidoController.php on line 243.
+ 1 APPPATH\Controllers\PedidoController.php(243): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_usuario"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Controllers\\PedidoController.php', 243)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:01:08 --> ErrorException: Undefined array key "producto"
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 63.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "producto"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 63)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(251): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:05:15 --> ErrorException: Undefined variable $total
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 72.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 72)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(255): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:06:35 --> ErrorException: Undefined variable $total
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 72.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 72)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(260): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:09:04 --> ErrorException: Undefined variable $total
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 72.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 72)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(262): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:12:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:17:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:18:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:18:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:19:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:22:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:25:25 --> ErrorException: Undefined array key "metodo"
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 141.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(141): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "metodo"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 141)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(262): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:27:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:27:06 --> ErrorException: Undefined array key "metodo"
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 168.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(168): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "metodo"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 168)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(262): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:35:06 --> Error: Class "App\Controllers\DireccionPedidoModel" not found
+[Method: GET, Route: ver_comprobante/56]
+in APPPATH\Controllers\PedidoController.php on line 235.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('56')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:35:58 --> Error: Class "App\Controllers\DireccionPedidoModel" not found
+[Method: GET, Route: ver_comprobante/55]
+in APPPATH\Controllers\PedidoController.php on line 235.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('55')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 01:37:26 --> ErrorException: Undefined array key "metodo"
+[Method: GET, Route: ver_comprobante/55]
+in APPPATH\Views\contenido\comprobante_pdf.php on line 168.
+ 1 APPPATH\Views\contenido\comprobante_pdf.php(168): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "metodo"', 'C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php', 168)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\proyecto_bret_fati\\app\\Views\\contenido\\comprobante_pdf.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('contenido/comprobante_pdf', [], true)
+ 5 APPPATH\Controllers\PedidoController.php(269): view('contenido/comprobante_pdf', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->verComprobante('55')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 01:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:39:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:39:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:40:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:40:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:41:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:41:36 --> Cart Class Initialized
+INFO - 2025-12-17 01:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:44:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:44:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:47:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:49:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:50:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:54:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:54:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:55:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:55:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 01:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:05:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 02:14:00 --> Exception: The PHP GD extension is required, but is not installed.
+[Method: GET, Route: pedido/pdf/50]
+in FCPATH\vendor\dompdf\dompdf\lib\Cpdf.php on line 6207.
+ 1 FCPATH\vendor\dompdf\dompdf\src\Adapter\CPDF.php(674): Dompdf\Cpdf->addPngFromFile('C:\\Users\\Fatima\\AppData\\Local\\Temp\\ca_C009.tmp', 107.13999999999999, 695.6767719685039, 52.5, 52.5)
+ 2 FCPATH\vendor\dompdf\dompdf\src\Renderer\Image.php(63): Dompdf\Adapter\CPDF->image('C:\\Users\\Fatima\\AppData\\Local\\Temp\\ca_C009.tmp', 107.13999999999999, 93.71322803149606, 52.5, 52.5, 'normal')
+ 3 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(305): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+ 4 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(140): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+ 5 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+ 6 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableCell))
+ 7 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRow))
+ 8 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRowGroup))
+ 9 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Table))
+10 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+11 FCPATH\vendor\dompdf\dompdf\src\FrameReflower\Page.php(148): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+12 FCPATH\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(915): Dompdf\FrameReflower\Page->reflow(null)
+13 FCPATH\vendor\dompdf\dompdf\src\Dompdf.php(815): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+14 APPPATH\Controllers\PedidoController.php(225): Dompdf\Dompdf->render()
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('50')
+16 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:14:03 --> ErrorException: Allowed memory size of 536870912 bytes exhausted (tried to allocate 257953792 bytes)
+【Previous Exception】
+Exception
+The PHP GD extension is required, but is not installed.
+#0 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Adapter\CPDF.php(674): Dompdf\Cpdf->addPngFromFile('C:\\Users\\Fatima...', 107.14, 695.6767719685, 52.5, 52.5)
+#1 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer\Image.php(63): Dompdf\Adapter\CPDF->image('C:\\Users\\Fatima...', 107.14, 93.713228031496, 52.5, 52.5, 'normal')
+#2 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(305): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+#3 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(140): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+#4 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+#5 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableCell))
+#6 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRow))
+#7 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRowGroup))
+#8 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Table))
+#9 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#10 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\FrameReflower\Page.php(148): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#11 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(915): Dompdf\FrameReflower\Page->reflow(NULL)
+#12 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Dompdf.php(815): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#13 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\PedidoController.php(225): Dompdf\Dompdf->render()
+#14 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('50')
+#15 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#16 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#18 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#19 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#20 {main}
+[Method: GET, Route: pedido/pdf/50]
+in APPPATH\Views\errors\html\error_exception.php on line 125.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-12-17 02:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:48 --> Cart Class Initialized
+INFO - 2025-12-17 02:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:48 --> Cart Class Initialized
+INFO - 2025-12-17 02:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:55 --> Cart Class Initialized
+INFO - 2025-12-17 02:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:55 --> Cart Class Initialized
+INFO - 2025-12-17 02:14:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:59 --> Cart Class Initialized
+INFO - 2025-12-17 02:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:14:59 --> Cart Class Initialized
+INFO - 2025-12-17 02:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:19:39 --> Cart Class Initialized
+INFO - 2025-12-17 02:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:20:34 --> Cart Class Initialized
+INFO - 2025-12-17 02:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-17 02:20:47 --> Exception: The PHP GD extension is required, but is not installed.
+[Method: GET, Route: pedido/pdf/57]
+in FCPATH\vendor\dompdf\dompdf\lib\Cpdf.php on line 6207.
+ 1 FCPATH\vendor\dompdf\dompdf\src\Adapter\CPDF.php(674): Dompdf\Cpdf->addPngFromFile('C:\\Users\\Fatima\\AppData\\Local\\Temp\\ca_F574.tmp', 107.13999999999999, 695.6767719685039, 52.5, 52.5)
+ 2 FCPATH\vendor\dompdf\dompdf\src\Renderer\Image.php(63): Dompdf\Adapter\CPDF->image('C:\\Users\\Fatima\\AppData\\Local\\Temp\\ca_F574.tmp', 107.13999999999999, 93.71322803149606, 52.5, 52.5, 'normal')
+ 3 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(305): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+ 4 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(140): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+ 5 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+ 6 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableCell))
+ 7 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRow))
+ 8 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRowGroup))
+ 9 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Table))
+10 FCPATH\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+11 FCPATH\vendor\dompdf\dompdf\src\FrameReflower\Page.php(148): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+12 FCPATH\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(915): Dompdf\FrameReflower\Page->reflow(null)
+13 FCPATH\vendor\dompdf\dompdf\src\Dompdf.php(815): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+14 APPPATH\Controllers\PedidoController.php(225): Dompdf\Dompdf->render()
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('57')
+16 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:20:51 --> ErrorException: Allowed memory size of 536870912 bytes exhausted (tried to allocate 260050944 bytes)
+【Previous Exception】
+Exception
+The PHP GD extension is required, but is not installed.
+#0 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Adapter\CPDF.php(674): Dompdf\Cpdf->addPngFromFile('C:\\Users\\Fatima...', 107.14, 695.6767719685, 52.5, 52.5)
+#1 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer\Image.php(63): Dompdf\Adapter\CPDF->image('C:\\Users\\Fatima...', 107.14, 93.713228031496, 52.5, 52.5, 'normal')
+#2 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(305): Dompdf\Renderer\Image->render(Object(Dompdf\FrameDecorator\Image))
+#3 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(140): Dompdf\Renderer->_render_frame('image', Object(Dompdf\FrameDecorator\Image))
+#4 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Image))
+#5 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableCell))
+#6 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRow))
+#7 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\TableRowGroup))
+#8 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Table))
+#9 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Renderer.php(207): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#10 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\FrameReflower\Page.php(148): Dompdf\Renderer->render(Object(Dompdf\FrameDecorator\Block))
+#11 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\FrameDecorator\AbstractFrameDecorator.php(915): Dompdf\FrameReflower\Page->reflow(NULL)
+#12 C:\xampp\htdocs\proyecto_bret_fati\vendor\dompdf\dompdf\src\Dompdf.php(815): Dompdf\FrameDecorator\AbstractFrameDecorator->reflow()
+#13 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\PedidoController.php(225): Dompdf\Dompdf->render()
+#14 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\PedidoController->generarPDF('57')
+#15 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#16 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#18 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#19 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#20 {main}
+[Method: GET, Route: pedido/pdf/57]
+in APPPATH\Views\errors\html\error_exception.php on line 125.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-12-17 02:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 02:28:13 --> mysqli_sql_exception: Column 'telefono_consulta' cannot be null in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-17 02:28:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+[Method: POST, Route: contacto]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:28:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:28:13 --> [Caused by] mysqli_sql_exception: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 02:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 02:28:21 --> mysqli_sql_exception: Column 'telefono_consulta' cannot be null in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-17 02:28:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+[Method: POST, Route: contacto]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:28:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:28:21 --> [Caused by] mysqli_sql_exception: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 02:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 02:30:27 --> mysqli_sql_exception: Column 'telefono_consulta' cannot be null in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-17 02:30:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+[Method: POST, Route: contacto]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:30:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:30:27 --> [Caused by] mysqli_sql_exception: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 02:30:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 02:30:46 --> mysqli_sql_exception: Column 'telefono_consulta' cannot be null in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-17 02:30:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+[Method: POST, Route: contacto]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:30:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:30:46 --> [Caused by] mysqli_sql_exception: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 02:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 02:30:51 --> mysqli_sql_exception: Column 'telefono_consulta' cannot be null in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-17 02:30:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+[Method: POST, Route: contacto]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:30:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:30:51 --> [Caused by] mysqli_sql_exception: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 02:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:31:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-17 02:31:41 --> mysqli_sql_exception: Column 'telefono_consulta' cannot be null in C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_bret_fati\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\proyecto_bret_fati\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_bret_fati\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_bret_fati\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_bret_fati\app\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+#9 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+#10 C:\xampp\htdocs\proyecto_bret_fati\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\proyecto_bret_fati\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\proyecto_bret_fati\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-17 02:31:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+[Method: POST, Route: contacto]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:31:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-17 02:31:41 --> [Caused by] mysqli_sql_exception: Column 'telefono_consulta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (\'petri@gmail.com\', NULL, \'Adecuado\', \'Estoy conforme con mis compras\', \'18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `consulta` (`correo_consulta`, `telefono_consulta`, `motivo_consulta`, `texto_consulta`, `id_usuario`) VALUES (:correo_consulta:, :telefono_consulta:, :motivo_consulta:, :texto_consulta:, :id_usuario:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\ConsultaController.php(76): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultaController->add_consulta()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-12-17 02:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:35:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:36:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:37:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:37:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:37:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-17 02:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

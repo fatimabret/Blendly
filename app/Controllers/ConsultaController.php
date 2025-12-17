@@ -38,19 +38,17 @@ class ConsultaController extends BaseController
         // Obtener correo y teléfono del formulario o sesión
         if ($session->has('correo_usuario')) {
             // Usuario logueado
-            $correo   = $session->get('correo_usuario');
-            $telefono = $session->get('telefono_usuario');
+            $correo = $session->get('correo_usuario');
+
+            $usuario = $userModel->where('correo_usuario', $correo)->first();
+            $telefono = $usuario['telefono_usuario'] ?? null;
+            $idUsuario = $usuario['id_usuario'] ?? null;
         } else {
             // Invitado
             $correo   = $this->request->getPost('correo_consulta');
             $telefono = $this->request->getPost('telefono_consulta');
+            $idUsuario = null;
         }
-
-        // Verificar si el correo existe en la tabla usuarios
-        $usuario = $userModel->where('correo_usuario', $correo)->first();
-
-        // Si existe, obtenemos su ID; si no, dejamos null
-        $idUsuario = $usuario ? $usuario['id_usuario'] : null;
 
         // Validación
         $validation = \Config\Services::validation();

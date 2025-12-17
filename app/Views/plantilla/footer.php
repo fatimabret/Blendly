@@ -28,7 +28,7 @@
         <!-- Separador y derechos de autor -->
             <div class="w-100 d-none d-md-block"></div>
             <div class="col-pie">
-                <p class="footer-text"><span class="border-top">Copyright &copy; Todos los codigos reservados - 2024 | Blendly</span></p>
+                <p class="footer-text"><span class="border-top">Copyright &copy; Todos los codigos reservados - 2025 | Blendly</span></p>
             </div>
 
         </div>
