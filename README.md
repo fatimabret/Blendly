@@ -1,60 +1,89 @@
-# CodeIgniter 4 Framework
+# 🛒 Sistema de Gestión de Ventas – Blendly Bebidas
 
-## What is CodeIgniter?
+![PHP](https://img.shields.io/badge/PHP-8.0-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![CodeIgniter](https://img.shields.io/badge/CodeIgniter-4.0-EF4223?style=for-the-badge&logo=codeigniter&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+> Aplicación web integral para la gestión de ventas online con arquitectura MVC y generación automática de comprobantes.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+---
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 📖 Descripción del Proyecto
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Este sistema gestiona el flujo completo de una venta electrónica, desde la selección de productos en un catálogo dinámico hasta la emisión del comprobante en PDF. 
 
-## Important Change with index.php
+Está desarrollado priorizando la **integridad de datos** y la **escalabilidad**, implementando patrones de diseño robustos y una base de datos relacional normalizada.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## 🚀 Funcionalidades Principales
 
-**Please** read the user guide for a better explanation of how CI4 works!
+* **🛒 Carrito de Compras:** Persistencia en sesión y cálculo dinámico de subtotales.
+* **📑 Gestión de Pedidos:** Estructura Maestro-Detalle (Cabecera + Renglones).
+* **📄 Facturación Automática:** Generación de PDFs con DOMPDF tras confirmar la compra.
+* **🔒 Seguridad:** Validaciones en servidor, protección CSRF y sanitización de datos (`esc()`).
+* **👤 Gestión de Usuarios:** Registro, autenticación y persistencia de datos del cliente en cada pedido.
+* **📦 Catálogo Dinámico:** Filtrado por categorías y control de stock.
 
-## Repository Management
+---
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## 🧠 Arquitectura y Lógica de Negocio
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+El núcleo del sistema se basa en un modelo transaccional robusto:
 
-## Contributing
+### 1. Modelo Relacional Normalizado (Cabecera – Detalle)
+Se implementó una separación estricta para garantizar la integridad:
+* `pedido`: Almacena datos generales (Cliente, Fecha, Total, Estado).
+* `pedido_detalle`: Almacena cada producto individual, su precio unitario congelado al momento de la compra y cantidad.
 
-We welcome contributions from the community.
+### 2. Inmutabilidad de Datos
+> **Problema:** ¿Qué pasa si el cliente cambia su dirección o el producto cambia de precio después de una venta?
+> **Solución:** Los datos del cliente y los precios se "congelan" en la tabla de pedidos al momento de la transacción. Esto garantiza la trazabilidad histórica y la consistencia contable.
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+### 3. Cálculo Transaccional
+El sistema realiza validaciones cruzadas de los totales en tres momentos para evitar inconsistencias:
+1.  En la vista del carrito (Frontend).
+2.  Al procesar la orden (Backend).
+3.  Al generar el PDF (Documento final).
 
-## Server Requirements
+---
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## 🛠️ Stack Tecnológico
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+### Backend
+* **Lenguaje:** PHP 8
+* **Framework:** CodeIgniter 4 (MVC)
+* **Librerías:** DOMPDF (Reportes), Composer.
 
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
+### Base de Datos
+* **Motor:** MySQL
+* **Diseño:** Relacional, Normalizado (3FN), Integridad referencial (FKs).
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+### Frontend
+* **Framework:** Bootstrap 5
+* **Scripting:** JavaScript, HTML5, CSS3.
+* **UX:** Modales dinámicos para resumen de compra.
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+---
+
+## 📝 Instalación y Despliegue
+
+1.  Clonar el repositorio:
+    ```bash
+    git clone https://github.com/fatimabret/Blendly.git
+    ```
+2.  Instalar dependencias:
+    ```bash
+    composer install
+    ```
+3.  Configurar base de datos:
+    * Importar el script `db_blendly.sql` en MySQL.
+    * Configurar credenciales en el archivo `.env`.
+4.  Ejecutar servidor local:
+    ```bash
+    php spark serve
+    ```
+
+---
+**Desarrollado por Fatima Bret** - *Estudiante de Lic. en Sistemas de Información*
